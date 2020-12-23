@@ -6,10 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class MainUIController : MonoBehaviour
 {
-    [Header("EscenaMenu")]
-    public Image confirmExitImage;
-    bool confirmExitImageDespl = false;
-
     [Header("PanelRecursos")]
     public Text resource;
     public Image resourceImage;
@@ -36,7 +32,6 @@ public class MainUIController : MonoBehaviour
     [Range(0, 100)]
     public float pressurePercentage;
     public Image pressureImage;
-
 
 
     public void AlPulsarSA()
@@ -70,30 +65,6 @@ public class MainUIController : MonoBehaviour
     public void AlPulsarPlayMenu()
     {
         SceneManager.LoadScene(1);
-    }
-
-    public void AlPulsarDesplegarExitMenu()
-    {
-        if (confirmExitImageDespl)
-        {
-            confirmExitImageDespl = false;
-            confirmExitImage.gameObject.SetActive(false);
-        }
-        else
-        {
-            confirmExitImageDespl = true;
-            confirmExitImage.gameObject.SetActive(true);
-        }
-    }
-    //public void AlPulsarCancelExitMenu()
-    //{
-
-    //}
-    public void AlPulsarConfirmExitMenu()
-    {
-        print("Quit game");
-        Application.Quit();
-
     }
 
     private void Update()

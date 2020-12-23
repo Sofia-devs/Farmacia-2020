@@ -30,6 +30,7 @@ public class ClickOnCity : MonoBehaviour
                 {
                     case "Kidney":
                         hit.collider.gameObject.transform.parent.parent.position = citiesPos[0];
+                        this.gameObject.GetComponent<Tutorial>().ActivarTutorial();
                         break;     
                         
                     case "Liver":
