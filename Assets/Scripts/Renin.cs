@@ -12,9 +12,8 @@ public class Renin : MonoBehaviour
     public float Timer;
 
     public GameObject RiverBarrierContainer;
-    //public GameObject RiverBarrier1;
-    //public GameObject RiverBarrier2;
-    public float barriersDistance;
+    
+    
 
     public MainUIController uiCon;
 
@@ -26,7 +25,7 @@ public class Renin : MonoBehaviour
     void Start()
     {
 
-        //anim = RiverBarrierContainer.GetComponent<Animator>();
+        anim = RiverBarrierContainer.GetComponent<Animator>();
 
 
 
@@ -36,7 +35,7 @@ public class Renin : MonoBehaviour
     void Update()
     {
 
-        //barriersDistance = Vector2.Distance(RiverBarrier1.transform.position, RiverBarrier2.transform.position);
+        
 
 
         Timer += Time.deltaTime; //Un simple cronómetro
@@ -52,24 +51,26 @@ public class Renin : MonoBehaviour
 
             }
 
-            if (reninValue >= 50 && uiCon.avatarState != "Stressed")
+            if (reninValue > 80 && uiCon.avatarState != "Stressed")
             {
 
                 uiCon.Avatar("Stressed");
-                //anim.SetBool("reninValueCounter", true);
+
+                anim.SetBool("reninValueCounter", true); //Con esta acción se va a triggerear la animación que estrechará los ríos.
 
                 //reninValueCounter = true;
 
-                //Vector2 RB1 = RiverBarrier1.transform.position;
-                //Vector2 RB2 = RiverBarrier2.transform.position;
-
-                //initialDistance = RB1 - RB2;
-
-                //RiverBarrier1.transform.position = RiverBarrier2.transform.position - (0, 1);
-
-
-
             }
+
+            /*public void EnviarRenina()
+            {
+
+                reninValue = reninValue - reninValue;
+
+            }*/
+
+
+
 
         }
 
