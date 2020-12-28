@@ -9,6 +9,7 @@ public class Tutorial : MonoBehaviour
     public int faseTutorial;
     public string[] dialogPhraseTutorial;
     public Text dialogText;
+    public bool borroso;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,7 @@ public class Tutorial : MonoBehaviour
         panelAvatar.SetActive(true);
         panelAvatar.transform.GetChild(0).gameObject.SetActive(true); //activar borroso
 
-        Invoke("Dialog", 0.2f);
+        Invoke("Dialog", 0.5f);
 
     }
 

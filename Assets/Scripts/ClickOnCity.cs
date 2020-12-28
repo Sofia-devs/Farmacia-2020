@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ClickOnCity : MonoBehaviour
 {
@@ -9,8 +10,8 @@ public class ClickOnCity : MonoBehaviour
     float velocidadProdRenina;
     public Vector3[] citiesPos;
     public Renin reninaSc;
+    public MainUIController UiCon;
     float reninaValor;
-
     public float reninaEnviada;
 
     private void Start()
@@ -28,20 +29,26 @@ public class ClickOnCity : MonoBehaviour
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            if (hit.collider.gameObject.transform.parent != null && hit.collider.gameObject.transform.parent.name == "Cities")
+            if (hit.collider.gameObject.transform.parent != null /*&& hit.collider.gameObject.transform.parent.name == "Cities"*/)
             {
                 switch (hit.collider.gameObject.name)
                 {
                     case "Kidney":
-                        hit.collider.gameObject.transform.parent.parent.position = citiesPos[0];
+                        UiCon.KidneyEnter();
+                        //hit.collider.gameObject.transform.parent.parent.position = citiesPos[0]; //esta linea va depués del tutorial y activa los señores de la renina
                         this.gameObject.GetComponent<Tutorial>().ActivarTutorial();
+                        hit.collider.gameObject.transform.GetChild(0).gameObject.SetActive(true);
                         break;     
                         
                     case "Liver":
                         hit.collider.gameObject.transform.parent.parent.position = citiesPos[1];
+                        hit.collider.gameObject.transform.GetChild(0).gameObject.SetActive(true);
                         break;
                     case "People":
                         reninaSc.reninDiscovered = true;
+                        break;
+                    case "Fisherman":
+                        SceneManager.LoadScene(2);
                         break;
 
 
@@ -91,7 +98,7 @@ public class ClickOnCity : MonoBehaviour
 
                 reninaEnviada = reninaValor;                                                             //la renina enviada tendrá el mismo valor que reninaValor cuando pulse
 
-                reninaValor = reninaValor - reninaValor;                                                //al valor de la renina se le restará el valor que tenga en ese momento
+                reninaValor = 0;                                                                        //al valor de la renina se le restará el valor que tenga en ese momento
 
             }
             //notas para Álvaro: Creo que esto no funciona porque tendría que estar guardando el valor de la variable justo en el momento que pulso en algún lado, pero no sé hacerlo
@@ -101,6 +108,15 @@ public class ClickOnCity : MonoBehaviour
 
 
         }
+        if (Input.GetMouseButtonDown(1) && MainCamera.GetComponent<Renin>().reninValue >= 55)
+        {
+            Debug.Log("Me han pulsado");
+
+            reninaEnviada = MainCamera.GetComponent<Renin>().reninValue;                             //la renina enviada tendrá el mismo valor que reninaValor cuando pulse
+
+            MainCamera.GetComponent<Renin>().reninValue = 0;                                        //al valor de la renina se le restará el valor que tenga en ese momento
+        }
+
     }
 
 

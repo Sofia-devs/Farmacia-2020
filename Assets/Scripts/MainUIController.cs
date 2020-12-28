@@ -73,6 +73,7 @@ public class MainUIController : MonoBehaviour
         {
             
             resourcePercentage = reninSc.reninValue;
+            resource.text = "Renin";
             if(resourcePercentage <= 100)
             {
                 resourceImage.fillAmount = resourcePercentage/100;
@@ -93,5 +94,10 @@ public class MainUIController : MonoBehaviour
                 break;
                 //añadir más estados
         }
+    }
+
+    public void KidneyEnter()
+    {
+        cityState = "Kidney";
     }
 }
