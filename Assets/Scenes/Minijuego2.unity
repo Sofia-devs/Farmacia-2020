@@ -351,7 +351,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Hola muy buenah me llamo Alvaritroker y hoy no voy al sine
+  m_Text: 'Help
 
 '
 --- !u!222 &172338669
@@ -454,7 +454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &265320581
 RectTransform:
   m_ObjectHideFlags: 0
@@ -952,9 +952,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1815504301}
-        m_TargetAssemblyTypeName: MainUIController, Assembly-CSharp
-        m_MethodName: AlPulsarSA
+      - m_Target: {fileID: 519420034}
+        m_TargetAssemblyTypeName: TutorialMinigame, Assembly-CSharp
+        m_MethodName: AlPulsarTM
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1210,8 +1210,8 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   - component: {fileID: 519420035}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1334,28 +1334,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca00c577099f6a41b4bd1dd18c70c2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f584be0515b7b14d94f6f3badff7bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panelAvatar: {fileID: 558824508}
   faseTutorial: 0
   dialogPhraseTutorial:
-  - "\xA1Hola! Bienvenido al valle ri\xF1\xF3n, debes de ser el nuevo supervisor
-    del r\xEDo."
-  - Nuestro pueblo es el mejor sitio para detectar problemas en las aguas porque
-    nos deshacemos de sus impurezas tras usarlas para activar nuestras minas.
-  - Recuerda hacer descansos durante el trabajo.
-  - "\xA1F\xEDjate! Parece que la presi\xF3n del r\xEDo est\xE1 bajando demasiado.
-    El r\xEDo es el sustento de este mundo, hay que hacer algo."
-  - "Extraigamos la reina de las minas, las gl\xE1ndulas suprarrenales la generan
-    desde la cima."
-  - "Ahora s\xF3lo hay que esperar a tener suficiente. aumenta o disminuye su producci\xF3n."
-  - "Vamos a enviarla en el barco hasta el desfiladero H\xEDgado. All\xED podremos
-    avanzar m\xE1s en nuestra empresa. Arrastra el mapa para fijar nuestro destino"
-  - "Navega hasta el H\xEDgado."
-  - "\xA1En marcha! "
+  - "Angiotensinogen will pass through this current flow, click on \u201CFISH!\u201D
+    when it is on the fishing net."
+  - "Avoid fishing for other things or we won\u2019t get Angiotensin I, catch it!"
+  - 
+  - 
+  - 
   dialogText: {fileID: 172338668}
-  borroso: 0
+  avatarState: 
+  avatares: []
+  currAvatar: {fileID: 491988034}
+  panelPauseDesplegable: {fileID: 0}
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,7 +1399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &558824509
 RectTransform:
   m_ObjectHideFlags: 0

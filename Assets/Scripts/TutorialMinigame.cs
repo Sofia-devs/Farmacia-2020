@@ -15,36 +15,75 @@ public class TutorialMinigame : MonoBehaviour
     public Text dialogText; //nos permitirá crear textos
 
     [Header("TutorialMinijuego")]
-    public GameObject panelTM;
-    public Text tA1;
-    bool panelTMout;
     public string avatarState;
     public Sprite[] avatares;
     public Image currAvatar;
 
-    
+    [Header("PanelPause")]
+    public GameObject panelPauseDesplegable;
+    bool panelPauseout;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Invoke("AvatarApareceTM", 2);
     }
 
 
-    public void ActivarTutorialMinijuego()
+
+    public void AvatarApareceTM()
     {
-        Invoke("AvatarAparece", 2);
-
+        panelAvatar.SetActive(true); 
+        Invoke("DialogMinijuego", 0.5f);
+        
 
     }
-
 
     public void DialogMinijuego()
     {
         panelAvatar.transform.GetChild(1).gameObject.SetActive(true); //activar dialogos
-        dialogText.text = dialogPhraseTutorial[faseTutorial];
+        dialogText.text = dialogPhraseTutorial[faseTutorial];         //en base a la base del tutorial que nos encontremos, se reproducirá el diálogo correspondiente
+
+
     }
+
+
+    public void AlPulsarTM()
+    {
+        faseTutorial++;                                             //al pulsar el botón del avatar, se sumará 1 a la variable de la fase del tutorial
+        dialogText.text = dialogPhraseTutorial[faseTutorial];       //con esto, actualizamos el nuevo valor de la variable, dde tal forma, que en la linea 46, sigue funcionando
+    }
+
+    public void AlPulsarPause()
+    {
+        if (!panelPauseout)
+        {
+            panelPauseout = true;
+            panelPauseDesplegable.SetActive(true);
+        }
+        else
+        {
+            panelPauseout = false;
+            panelPauseDesplegable.SetActive(false);
+        }
+    }
+
+    public void Avatar(string state)
+    {
+        avatarState = state;
+        switch (state)
+        {
+            case "Happy":
+                currAvatar.sprite = avatares[0];
+                break;
+            case "Stressed":
+                currAvatar.sprite = avatares[1];
+                break;
+                //añadir más estados
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
