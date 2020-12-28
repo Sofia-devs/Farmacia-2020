@@ -14,6 +14,8 @@ public class ClickOnCity : MonoBehaviour
     float reninaValor;
     public float reninaEnviada;
 
+
+
     private void Start()
     {
         MainCamera = this.gameObject;
@@ -27,6 +29,12 @@ public class ClickOnCity : MonoBehaviour
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+
+            //MainCamera.GetComponent<Tutorial>().faseTutorial++;         //Poner condición para que solo funcione cuando se active el tutorial.
+
+            
+
+
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider.gameObject.transform.parent != null /*&& hit.collider.gameObject.transform.parent.name == "Cities"*/)

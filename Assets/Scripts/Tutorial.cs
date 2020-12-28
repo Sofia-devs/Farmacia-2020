@@ -43,4 +43,6 @@ public class Tutorial : MonoBehaviour
         panelAvatar.transform.GetChild(1).gameObject.SetActive(true); //activar dialogos
         dialogText.text = dialogPhraseTutorial[faseTutorial];
     }
+
+
 }

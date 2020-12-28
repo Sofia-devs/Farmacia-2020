@@ -380,6 +380,7 @@ MonoBehaviour:
     m_Bits: 0
   citiesPos: []
   reninaSc: {fileID: 0}
+  UiCon: {fileID: 0}
   reninaEnviada: 0
 --- !u!114 &425417965
 MonoBehaviour:
