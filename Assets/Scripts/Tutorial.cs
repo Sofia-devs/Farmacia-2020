@@ -15,7 +15,7 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         //dialogos
-        dialogPhraseTutorial = 
+        dialogPhraseTutorial = (
             "Hi! Welcom to Kidney Valley, you must be the new river supervisor", 
             "So that you can review each city, click on them", 
             "Here we get rid of impurities in the rivers and produce renin when necessary", 
@@ -33,7 +33,7 @@ public class Tutorial : MonoBehaviour
             "Angiotensinogen will pass through this current flow, click on “FISH!” when it is on the fishing net", 
             "Avoid fishing for other things or we won’t get Angiotensin I, catch it!", 
             "Try again", 
-            "Great! Angiotensin I has been formed";
+            "Great! Angiotensin I has been formed");
     }
 
     // Update is called once per frame
