@@ -1351,6 +1351,7 @@ MonoBehaviour:
   avatares: []
   currAvatar: {fileID: 491988034}
   panelPauseDesplegable: {fileID: 0}
+  riverPointLight: {fileID: 2035787181}
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0

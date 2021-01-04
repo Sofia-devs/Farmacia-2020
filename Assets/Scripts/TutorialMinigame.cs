@@ -2,92 +2,122 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Serialization;
+using UnityEngine.Rendering;
+#if UNITY_EDITOR
+using UnityEditor.Experimental.SceneManagement;
+#endif
 
-
-public class TutorialMinigame : MonoBehaviour
+namespace UnityEngine.Experimental.Rendering.Universal
 {
-    public GameObject panelAvatar; //imagen del avatar
 
-    public int faseTutorial; //según sumemos el valor de esta variable podremos avanzar al siguiente diálogo del array
-
-    public string[] dialogPhraseTutorial; //aquí almacenamos todos los diálogos por los que irá avanzando el tutorial
-
-    public Text dialogText; //nos permitirá crear textos
-
-    [Header("TutorialMinijuego")]
-    public string avatarState;
-    public Sprite[] avatares;
-    public Image currAvatar;
-
-    [Header("PanelPause")]
-    public GameObject panelPauseDesplegable;
-    bool panelPauseout;
-
-
-    // Start is called before the first frame update
-    void Start()
+    public class TutorialMinigame : MonoBehaviour
     {
-        Invoke("AvatarApareceTM", 2);
-    }
+        public GameObject panelAvatar; //imagen del avatar
 
+        public int faseTutorial; //según sumemos el valor de esta variable podremos avanzar al siguiente diálogo del array
 
+        public string[] dialogPhraseTutorial; //aquí almacenamos todos los diálogos por los que irá avanzando el tutorial
 
-    public void AvatarApareceTM()
-    {
-        panelAvatar.SetActive(true); 
-        Invoke("DialogMinijuego", 0.5f);
+        public Text dialogText; //nos permitirá crear textos
+
+        bool activarGlowRio = false;
+
+        [Header("TutorialMinijuego")]
+        public string avatarState;
+        public Sprite[] avatares;
+        public Image currAvatar;
+
+        [Header("PanelPause")]
+        public GameObject panelPauseDesplegable;
+        bool panelPauseout;
+
+        [Header("GlowEffects")]
+        public GameObject riverPointLight;
         
 
-    }
-
-    public void DialogMinijuego()
-    {
-        panelAvatar.transform.GetChild(1).gameObject.SetActive(true); //activar dialogos
-        dialogText.text = dialogPhraseTutorial[faseTutorial];         //en base a la base del tutorial que nos encontremos, se reproducirá el diálogo correspondiente
 
 
-    }
-
-
-    public void AlPulsarTM()
-    {
-        faseTutorial++;                                             //al pulsar el botón del avatar, se sumará 1 a la variable de la fase del tutorial
-        dialogText.text = dialogPhraseTutorial[faseTutorial];       //con esto, actualizamos el nuevo valor de la variable, dde tal forma, que en la linea 46, sigue funcionando
-    }
-
-    public void AlPulsarPause()
-    {
-        if (!panelPauseout)
+        // Start is called before the first frame update
+        void Start()
         {
-            panelPauseout = true;
-            panelPauseDesplegable.SetActive(true);
+            Invoke("AvatarApareceTM", 2);
+
+           
+
+
         }
-        else
+
+
+
+        public void AvatarApareceTM()
         {
-            panelPauseout = false;
-            panelPauseDesplegable.SetActive(false);
-        }
-    }
+            panelAvatar.SetActive(true);
+            Invoke("DialogMinijuego", 0.5f);
 
-    public void Avatar(string state)
-    {
-        avatarState = state;
-        switch (state)
+
+        }
+
+        public void DialogMinijuego()
         {
-            case "Happy":
-                currAvatar.sprite = avatares[0];
-                break;
-            case "Stressed":
-                currAvatar.sprite = avatares[1];
-                break;
-                //añadir más estados
+            panelAvatar.transform.GetChild(1).gameObject.SetActive(true); //activar dialogos
+            dialogText.text = dialogPhraseTutorial[faseTutorial];         //en base a la base del tutorial que nos encontremos, se reproducirá el diálogo correspondiente
+            activarGlowRio = true;
+
         }
-    }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void AlPulsarTM()
+        {
+            faseTutorial++;                                             //al pulsar el botón del avatar, se sumará 1 a la variable de la fase del tutorial
+            dialogText.text = dialogPhraseTutorial[faseTutorial];       //con esto, actualizamos el nuevo valor de la variable, dde tal forma, que en la linea 46, sigue funcionando
+        }
+
+        public void AlPulsarPause()
+        {
+            if (!panelPauseout)
+            {
+                panelPauseout = true;
+                panelPauseDesplegable.SetActive(true);
+            }
+            else
+            {
+                panelPauseout = false;
+                panelPauseDesplegable.SetActive(false);
+            }
+        }
+
+        public void Avatar(string state)
+        {
+            avatarState = state;
+            switch (state)
+            {
+                case "Happy":
+                    currAvatar.sprite = avatares[0];
+                    break;
+                case "Stressed":
+                    currAvatar.sprite = avatares[1];
+                    break;
+                    //añadir más estados
+            }
+        }
+
+
+        // Update is called once per frame
+        void Update()
+        {
+
+            if (faseTutorial == 0 && activarGlowRio) //cuando la fase del tuto sea 0 y la bool activarGlowRio este en true -- No hace falta poner true, porque lo asume, para que ocurriera en flase con poner una !delante valdría
+            {
+              
+                riverPointLight.GetComponent<Light2D>().intensity = Mathf.PingPong(Time.time, 1); 
+
+            }
+            else
+            {
+                riverPointLight.GetComponent<Light2D>().intensity = 0;
+                activarGlowRio = false;
+            }
+        }
     }
 }
