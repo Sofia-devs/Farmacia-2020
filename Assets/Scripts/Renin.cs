@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Renin : MonoBehaviour
 {
 
@@ -12,9 +13,9 @@ public class Renin : MonoBehaviour
     public float Timer;
 
     public GameObject RiverBarrierContainer;
-    
-    
 
+    public GameObject kidneyFilterLight;
+    bool activarKidneyFilter = false;
     public MainUIController uiCon;
 
 
@@ -35,12 +36,12 @@ public class Renin : MonoBehaviour
     void Update()
     {
 
-        
+
 
 
         Timer += Time.deltaTime; //Un simple cronómetro
 
-        if(reninDiscovered == true) //Con esta booleana activamos la producción de renina en el tutorial
+        if (reninDiscovered == true) //Con esta booleana activamos la producción de renina en el tutorial
         {
 
             if (Timer >= delayAmount) //Si el valor del Timer es mayor que el valor de DelayAmount
@@ -51,32 +52,42 @@ public class Renin : MonoBehaviour
 
             }
 
-            if (reninValue > 80 && uiCon.avatarState != "Stressed")
+            if (reninValue > 80)
             {
 
-                uiCon.Avatar("Stressed");
+                activarKidneyFilter = true;
 
-                anim.SetBool("reninValueCounter", true); //Con esta acción se va a triggerear la animación que estrechará los ríos.
+                kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = Mathf.PingPong(Time.time, 1);
+    
+                if (uiCon.avatarState != "Stressed") // esto es para que solamente cambie una vez de avatar
+                {
 
-                //reninValueCounter = true;
+                    uiCon.Avatar("Stressed");
 
+                }
+                
+                //anim.SetBool("reninValueCounter", true); //Con esta acción se va a triggerear la animación que estrechará los ríos.
+              
             }
 
-            /*public void EnviarRenina()
+            else
             {
+                if (uiCon.avatarState != "Happy")
+                {
+                    uiCon.Avatar("Happy");
+                }
 
-                reninValue = reninValue - reninValue;
 
-            }*/
-
-
-
+                    kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = 0;
+                activarKidneyFilter = true;
+            }
 
         }
 
-      
-    
+
+
 
 
     }
 }
+
