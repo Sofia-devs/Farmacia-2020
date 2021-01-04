@@ -13,6 +13,7 @@ public class ClickOnCity : MonoBehaviour
     public MainUIController UiCon;
     float reninaValor;
     public float reninaEnviada;
+    public GameObject mapa;
 
 
 
@@ -37,33 +38,36 @@ public class ClickOnCity : MonoBehaviour
 
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            if (hit.collider.gameObject.transform.parent != null /*&& hit.collider.gameObject.transform.parent.name == "Cities"*/)
+            if (hit.collider.gameObject.transform.parent.name == "Cities")
             {
+                mapa.GetComponent<Scroll>().incity = true;
                 switch (hit.collider.gameObject.name)
                 {
                     case "Kidney":
-                        UiCon.KidneyEnter();
-                        //hit.collider.gameObject.transform.parent.parent.position = citiesPos[0]; //esta linea va depués del tutorial y activa los señores de la renina
-                        this.gameObject.GetComponent<Tutorial>().ActivarTutorial();
-                        hit.collider.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                        Kidney(hit.collider.gameObject);
                         break;     
                         
                     case "Liver":
-                        hit.collider.gameObject.transform.parent.parent.position = citiesPos[1];
                         hit.collider.gameObject.transform.GetChild(0).gameObject.SetActive(true);
                         break;
-                    case "People":
-                        reninaSc.reninDiscovered = true;
-                        break;
-                    case "Fisherman":
-                        SceneManager.LoadScene(2);
-                        break;
+                    //case "People":
+                    //    reninaSc.reninDiscovered = true;
+                    //    break;
+                    //case "Fisherman":
+                    //    SceneManager.LoadScene(2);
+                    //    break;
 
 
                 }
                 Debug.Log(hit.collider.gameObject.name);
+                Camera.main.transform.position =new Vector3(hit.collider.gameObject.transform.position.x, hit.collider.gameObject.transform.position.y, -10);
                 MainCamera.GetComponent<Camera>().orthographicSize = 2;
             }
+            else
+            {
+                print("patata");
+            }
+            
 
             if (hit.collider.gameObject.tag == "AumentoRenina" && velocidadProdRenina < 6)
             {
@@ -124,6 +128,21 @@ public class ClickOnCity : MonoBehaviour
 
             MainCamera.GetComponent<Renin>().reninValue = 0;                                        //al valor de la renina se le restará el valor que tenga en ese momento
         }
+
+    }
+
+    public void SalirCiudad()
+    {
+        mapa.GetComponent<Scroll>().incity = false;
+    }
+
+    public void Kidney(GameObject kindey)
+    {
+        UiCon.KidneyEnter();
+        this.gameObject.GetComponent<Tutorial>().ActivarTutorial();
+        Camera.main.transform.position = kindey.transform.position;
+        kindey.transform.GetChild(0).gameObject.SetActive(true);
+        UiCon.kidney.gameObject.SetActive(true);
 
     }
 

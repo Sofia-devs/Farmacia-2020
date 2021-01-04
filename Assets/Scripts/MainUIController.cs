@@ -33,19 +33,29 @@ public class MainUIController : MonoBehaviour
     public float pressurePercentage;
     public Image pressureImage;
 
+    [Header("Ciudades")]
+    public Image kidney;
 
+    private Tutorial tutorialSc;
+
+    public void Start()
+    {
+        tutorialSc = Camera.main.gameObject.GetComponent<Tutorial>();
+    }
     public void AlPulsarSA()
     {
-        if (!panelSADout)
-        {
-            panelSADout = true;
-            panelSAD.SetActive(true);
-        }
-        else
-        {
-            panelSADout = false;
-            panelSAD.SetActive(false);
-        }
+        //if (!panelSADout)
+        //{
+        //    panelSADout = true;
+        //    panelSAD.SetActive(true);
+        //}
+        //else
+        //{
+        //    panelSADout = false;
+        //    panelSAD.SetActive(false);
+        //}
+        tutorialSc.PassDialog();
+
     }
 
     public void AlPulsarPause()
@@ -99,5 +109,10 @@ public class MainUIController : MonoBehaviour
     public void KidneyEnter()
     {
         cityState = "Kidney";
+    }
+
+    public void SalirCiudad()
+    {
+        kidney.gameObject.SetActive(false);
     }
 }
