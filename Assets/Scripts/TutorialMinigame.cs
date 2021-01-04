@@ -33,7 +33,7 @@ namespace UnityEngine.Experimental.Rendering.Universal
         bool panelPauseout;
 
         [Header("GlowEffects")]
-        public GameObject riverPointLight;
+        public GameObject riverPointLight;  //luz del GO del río que nos permitirá hacer el efecto de glow
         
 
 
@@ -42,10 +42,6 @@ namespace UnityEngine.Experimental.Rendering.Universal
         void Start()
         {
             Invoke("AvatarApareceTM", 2);
-
-           
-
-
         }
 
 
@@ -54,16 +50,13 @@ namespace UnityEngine.Experimental.Rendering.Universal
         {
             panelAvatar.SetActive(true);
             Invoke("DialogMinijuego", 0.5f);
-
-
         }
 
         public void DialogMinijuego()
         {
             panelAvatar.transform.GetChild(1).gameObject.SetActive(true); //activar dialogos
             dialogText.text = dialogPhraseTutorial[faseTutorial];         //en base a la base del tutorial que nos encontremos, se reproducirá el diálogo correspondiente
-            activarGlowRio = true;
-
+            activarGlowRio = true;                                        //activamos la booleana para que el "if" de más abajo funcione
         }
 
 
@@ -109,14 +102,12 @@ namespace UnityEngine.Experimental.Rendering.Universal
 
             if (faseTutorial == 0 && activarGlowRio) //cuando la fase del tuto sea 0 y la bool activarGlowRio este en true -- No hace falta poner true, porque lo asume, para que ocurriera en flase con poner una !delante valdría
             {
-              
-                riverPointLight.GetComponent<Light2D>().intensity = Mathf.PingPong(Time.time, 1); 
-
+                riverPointLight.GetComponent<Light2D>().intensity = Mathf.PingPong(Time.time, 1); //Accedemos al scritp de Light 2D que hemos añadido al GO, dentro de su intensidad, y la modificamos. PingPong hace que parpadee, el Time.time hace que vaya de 0 a 1 progresivamente
             }
-            else
+            else                                                       //en caso de que no se den las dos condiciones del if  
             {
-                riverPointLight.GetComponent<Light2D>().intensity = 0;
-                activarGlowRio = false;
+                riverPointLight.GetComponent<Light2D>().intensity = 0; //devolvemos la intensidad a 0 para que no se quede con los valores en los que se cambie de fase 
+                activarGlowRio = false;                                //ponemos en false la booleana que activa el glow
             }
         }
     }
