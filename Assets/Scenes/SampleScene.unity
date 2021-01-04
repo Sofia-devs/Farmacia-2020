@@ -307,7 +307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159769357}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.33, y: -3.49, z: -9.5191345}
+  m_LocalPosition: {x: 0.03, y: -2.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 611458914}
@@ -622,6 +622,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285454950}
   m_CullTransparentMesh: 0
+--- !u!1 &348853615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 348853616}
+  m_Layer: 4
+  m_Name: River1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &348853616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348853615}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 611458914}
+  - {fileID: 718416731}
+  m_Father: {fileID: 2068988516}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &386288041
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +736,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_Children:
   - {fileID: 1219032298}
+  - {fileID: 2068988516}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1401,20 +1434,19 @@ MonoBehaviour:
   panelAvatar: {fileID: 558824508}
   faseTutorial: 0
   dialogPhraseTutorial:
-  - "\xA1Hola! Bienvenido al valle ri\xF1\xF3n, debes de ser el nuevo supervisor
-    del r\xEDo."
-  - Nuestro pueblo es el mejor sitio para detectar problemas en las aguas porque
-    nos deshacemos de sus impurezas tras usarlas para activar nuestras minas.
-  - Recuerda hacer descansos durante el trabajo.
-  - "\xA1F\xEDjate! Parece que la presi\xF3n del r\xEDo est\xE1 bajando demasiado.
-    El r\xEDo es el sustento de este mundo, hay que hacer algo."
-  - "Extraigamos la reina de las minas, las gl\xE1ndulas suprarrenales la generan
-    desde la cima."
-  - "Ahora s\xF3lo hay que esperar a tener suficiente. aumenta o disminuye su producci\xF3n."
-  - "Vamos a enviarla en el barco hasta el desfiladero H\xEDgado. All\xED podremos
-    avanzar m\xE1s en nuestra empresa. Arrastra el mapa para fijar nuestro destino"
-  - "Navega hasta el H\xEDgado."
-  - "\xA1En marcha! "
+  - Hi! Welcom to Kidney Valley, you must be the new river supervisor
+  - So that you can review each city, click on them
+  - Here we get rid of impurities in the rivers and produce renin when necessary
+  - Remember to take breaks during work
+  - Hey, look! It seems that the pressure of the river is dropping too low
+  - The river is the sustenance of this world, something must be done
+  - "Let\u2019s extract the renin from the mines, the adrenal glands generate it
+    from the top constantly"
+  - Now you just have to wait until you have enough. And be careful not to go overboard!
+  - You can increase or decrease production
+  - "We\u2019re going to send her on the boat to Liver Gorge. They will follow with
+    the rest"
+  - On going!
   dialogText: {fileID: 172338668}
   borroso: 0
 --- !u!114 &519420035
@@ -1549,9 +1581,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611458913}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.03813, y: 0.020599999, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_Children:
   - {fileID: 1540296101}
   - {fileID: 627651189}
@@ -1559,8 +1591,8 @@ Transform:
   - {fileID: 692670693}
   - {fileID: 159769358}
   - {fileID: 970454908}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 348853616}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &627651188
 GameObject:
@@ -1586,7 +1618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627651188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.73, y: -2.66, z: -9.5191345}
+  m_LocalPosition: {x: 2.02, y: -4.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 611458914}
@@ -1782,7 +1814,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692670692}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.53, y: -4.52, z: -9.5191345}
+  m_LocalPosition: {x: 0.7, y: -2.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 611458914}
@@ -1996,8 +2028,9 @@ GameObject:
   m_Component:
   - component: {fileID: 718416731}
   - component: {fileID: 718416730}
+  - component: {fileID: 718416732}
   m_Layer: 0
-  m_Name: Boat
+  m_Name: Boat1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2061,13 +2094,33 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718416729}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.56, y: -0.35, z: -0.05}
-  m_LocalScale: {x: 5.3523564, y: 5.3523564, z: 5.3523564}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0305, y: -0.0373, z: 0}
+  m_LocalScale: {x: 0.053523563, y: 0.053523563, z: 5.3523564}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 348853616}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &718416732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718416729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330dd774e6205d1438699ab5fca67ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1540296101}
+  - {fileID: 627651189}
+  - {fileID: 1910648295}
+  - {fileID: 692670693}
+  - {fileID: 159769358}
+  - {fileID: 970454908}
+  moveSpeed: 2
 --- !u!1 &970454907
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,7 +2145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970454907}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.53, y: -2.35, z: -9.5191345}
+  m_LocalPosition: {x: 0.41, y: -0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 611458914}
@@ -2480,7 +2533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540296100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5, y: -1.12, z: -9.5191345}
+  m_LocalPosition: {x: 1.43, y: -5.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 611458914}
@@ -3033,7 +3086,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910648294}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.9, y: -3.86, z: -9.5191345}
+  m_LocalPosition: {x: 1.66, y: -3.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 611458914}
@@ -3139,6 +3192,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2068988515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2068988516}
+  m_Layer: 4
+  m_Name: Rivers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2068988516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068988515}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 348853616}
+  m_Father: {fileID: 386288043}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2094766523
 GameObject:
   m_ObjectHideFlags: 0

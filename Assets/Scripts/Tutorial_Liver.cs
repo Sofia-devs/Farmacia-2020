@@ -10,26 +10,27 @@ public class Tutorial_Liver : MonoBehaviour
     public string[] dialogPhraseTutorial;
     public Text dialogText;
 
-    public gameObject liverMinigamePlayButtom;
+    public GameObject liverMinigamePlayButtom;
+    public bool waitForClickFisher = true;
 
     // Start is called before the first frame update
     void Start()
     {
         //dialogos
-        dialogPhraseTutorial = (
-            "Stop there! This is the Liver Gorge", 
-            "Here are the most thorough analysts, they don’t let anything pass through their customs", 
-            "We need Angiotensin I, talk to the fishermen", 
-            "Angiotensinogen will pass through this current flow, click on “FISH!” when it is on the fishing net", 
-            "Avoid fishing for other things or we won’t get Angiotensin I, catch it!", 
-            "Try again", 
-            "Great! Angiotensin I has been formed");
+        //dialogPhraseTutorial = (
+        //    "Stop there! This is the Liver Gorge",
+        //    "Here are the most thorough analysts, they don’t let anything pass through their customs",
+        //    "We need Angiotensin I, talk to the fishermen",
+        //    "Angiotensinogen will pass through this current flow, click on “FISH!” when it is on the fishing net",
+        //    "Avoid fishing for other things or we won’t get Angiotensin I, catch it!",
+        //    "Try again",
+        //    "Great! Angiotensin I has been formed");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (waitForClickFisher && Input.Jump)
+        if (waitForClickFisher && Input.GetAxisRaw("Jump") != 0)
         {
             Invoke("Dialog4", 0.5f);
 
@@ -73,10 +74,7 @@ public class Tutorial_Liver : MonoBehaviour
         faseTutorial++;
         dialogText.text = dialogPhraseTutorial[faseTutorial];
 
-        public bool waitForClickFisher = true;
-
-}
-
+    }
     public void Dialog4()
     {
         faseTutorial++;
@@ -109,5 +107,4 @@ public class Tutorial_Liver : MonoBehaviour
         dialogText.text = dialogPhraseTutorial[faseTutorial];
 
     }
-
 }
