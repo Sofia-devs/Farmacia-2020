@@ -8,6 +8,7 @@ public class Tutorial : MonoBehaviour
     public GameObject panelAvatar;
     public int faseTutorial;
     public string[] dialogPhraseTutorial;
+    public string[] dialogPhraseTutorialLiver;
     public Text dialogText;
     public bool borroso;
     public GameObject kidneyFilterLight;
@@ -15,7 +16,7 @@ public class Tutorial : MonoBehaviour
     private GameObject liver;
     public GameObject minero;
     private GameObject mineroLight;
-
+    public GameObject barco;
 
     private void Start()
     {
@@ -63,13 +64,48 @@ public class Tutorial : MonoBehaviour
         //    Invoke("PassDialog", 0.5f);
         //}
     }
+
+    public void PassDialogLiver()
+    {
+        faseTutorial++;
+        DialogLiver();
+    }   
+    public void DialogLiver()
+    {
+        dialogText.text = dialogPhraseTutorialLiver[faseTutorial];
+
+    }
     public void ActivarLiver()
     {
         liver.GetComponent<Collider2D>().enabled = true;
+
     }
-    //poner estres 
+
+    public void IniTutoLiver()
+    {
+        barco.SetActive(false);
+        liver.GetComponent<Collider2D>().enabled = false;
+        faseTutorial = 0;
+        DialogLiver();
+    }
+
+    public void OutCity()
+    {
+        barco.SetActive(true);
+        barco.GetComponent<FollowthePath>().activarBoat = true;
+        Invoke("LlegadaBarco", 2);
+
+    }
+
+    public void LlegadaBarco()
+    {
+        liver.GetComponent<Collider2D>().enabled = true;
+    }
+
+    //poner estres con moñeco azul
     //fase 3 señalar botón pause (postpuesto)
     //fase 4 presión baja (hecho)
     //fase 6 señalar minero (hecho)
     //fase 6 + pulsar minero = activar renina (hecho)
+    //activar collider + activar barco (hecho)
 }

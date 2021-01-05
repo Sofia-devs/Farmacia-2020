@@ -40,19 +40,28 @@ public class Renin : MonoBehaviour
 
             if (Timer >= delayAmount) //Si el valor del Timer es mayor que el valor de DelayAmount
             {
-                Timer = 0f; //Reseteamos el Timer a 0 para que vuelva a empezar a contar y la función tenga sentido
+                if (reninValue <= 100)
+                {
+                    Timer = 0f; //Reseteamos el Timer a 0 para que vuelva a empezar a contar y la función tenga sentido
 
-                reninValue += reninProdSpeed; //Sumamos 2 unidades al valor de la Renina
+                    reninValue += reninProdSpeed; //Sumamos 2 unidades al valor de la Renina
+
+                }
+                else
+                {
+                    reninValue = 100;
+                }
 
             }
+
 
             if (reninValue > 80)
             {
 
                 //activarKidneyFilter = true;
 
-                kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().color = Color.red;
-                kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = Mathf.PingPong(Time.time, 1);
+                //kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().color = Color.red;
+                //kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = Mathf.PingPong(Time.time, 1);
     
                 if (uiCon.avatarState != "Stressed") // esto es para que solamente cambie una vez de avatar
                 {

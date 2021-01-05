@@ -37,7 +37,10 @@ public class MainUIController : MonoBehaviour
 
     [Header("Ciudades")]
     public Image kidney;
+    public Image liver;
     public bool ciudadesActivadas = false;
+    public Rect zoom;
+    public GameObject pescador;
 
     private Tutorial tutorialSc;
 
@@ -55,7 +58,8 @@ public class MainUIController : MonoBehaviour
         {
             ciudadesActivadas = true;
         }
-        if((tutorialSc.faseTutorial >= 2 && tutorialSc.faseTutorial <= 5) || tutorialSc.faseTutorial == 7 || tutorialSc.faseTutorial == 0)
+
+        if (((tutorialSc.faseTutorial >= 2 && tutorialSc.faseTutorial <= 5) || tutorialSc.faseTutorial == 7 || tutorialSc.faseTutorial == 0) && cityState == "Kidney")
         {
             tutorialSc.PassDialog();
             if (tutorialSc.faseTutorial == 1)
@@ -69,7 +73,13 @@ public class MainUIController : MonoBehaviour
             {
                 StartCoroutine(BajarPresion());
             }
-
+        }
+        if(cityState == "Liver")
+        {
+            tutorialSc.PassDialogLiver();
+            liver.GetComponent<RectTransform>().sizeDelta = zoom.size;
+            liver.GetComponent<RectTransform>().anchoredPosition = new Vector2(zoom.x, zoom.y);
+            pescador.SetActive(true);
         }
     }
 
@@ -89,9 +99,10 @@ public class MainUIController : MonoBehaviour
 
     public void AlPulsarIncrease()
     {
-        if(tutorialSc.faseTutorial == 8)
+        if(tutorialSc.faseTutorial >= 8)
         {
-            tutorialSc.PassDialog();
+            if(tutorialSc.faseTutorial == 8)
+                tutorialSc.PassDialog();
             if (increaseText.text == "Increase")
             {
                 increaseText.text = "Stabilize";
@@ -132,7 +143,7 @@ public class MainUIController : MonoBehaviour
 
     private void Update()
     {
-        if(cityState == "Kidney")
+        if (cityState == "Kidney")
         {
             //renin update
             resourcePercentage = reninSc.reninValue;
@@ -154,12 +165,16 @@ public class MainUIController : MonoBehaviour
                     pressureState = "Subiendo";
                     StartCoroutine(SubirPresion());
                 }
+                if(pressurePercentage < 50)
+                {
+                    currAvatar.sprite = avatares[2];
+                }
             }
             else if(pressurePercentage >= 100)
             {
                 pressurePercentage = 100;
             }
-
+            
         }
     }
 
@@ -227,5 +242,7 @@ public class MainUIController : MonoBehaviour
     {
         reninSc.reninDiscovered = false;
         print(reninvalue);
+        SalirCiudad();
+        tutorialSc.OutCity();        
     }
 }

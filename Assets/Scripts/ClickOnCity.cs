@@ -48,7 +48,10 @@ public class ClickOnCity : MonoBehaviour
                         break;     
                         
                     case "Liver":
-                        hit.collider.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                        Liver(hit.collider.gameObject);
+                        
+                        //hit.collider.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+
                         break;
                     //case "People":
                     //    reninaSc.reninDiscovered = true;
@@ -144,6 +147,14 @@ public class ClickOnCity : MonoBehaviour
         Camera.main.gameObject.GetComponent<Tutorial>().PassDialog();
         //bajar presión
 
+    }
+
+    public void Liver(GameObject liver)
+    {
+        Camera.main.transform.position = liver.transform.position;
+        Camera.main.gameObject.GetComponent<Tutorial>().IniTutoLiver();
+        UiCon.cityState = "Liver";
+        UiCon.liver.gameObject.SetActive(true);
     }
 
 
