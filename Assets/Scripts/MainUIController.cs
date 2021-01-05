@@ -32,6 +32,7 @@ public class MainUIController : MonoBehaviour
     [Range(0, 100)]
     public float pressurePercentage;
     public Image pressureImage;
+    private string pressureState;
 
     [Header("Ciudades")]
     public Image kidney;
@@ -42,6 +43,9 @@ public class MainUIController : MonoBehaviour
     public void Start()
     {
         tutorialSc = Camera.main.gameObject.GetComponent<Tutorial>();
+        pressureState = "Estable";
+        pressurePercentage = 70;
+        pressureImage.fillAmount = pressurePercentage / 100;
     }
     public void AlPulsarSA()
     {
@@ -85,13 +89,26 @@ public class MainUIController : MonoBehaviour
     {
         if(cityState == "Kidney")
         {
-            
+            //renin
             resourcePercentage = reninSc.reninValue;
             resource.text = "Renin";
             if(resourcePercentage <= 100)
             {
                 resourceImage.fillAmount = resourcePercentage/100;
             }
+
+            //pressure
+            if(tutorialSc.faseTutorial == 4 && pressureState != "Bajando")
+            {
+                pressureState = "Bajando";
+                StartCoroutine(BajarPresion());
+            }
+            if (pressurePercentage <= 100)
+            {
+                pressureImage.fillAmount = pressurePercentage / 100;
+                print(pressurePercentage);
+            }
+
         }
     }
 
@@ -114,9 +131,31 @@ public class MainUIController : MonoBehaviour
     {
         cityState = "Kidney";
     }
-
+    public void PulsarMinero()
+    {
+        if (tutorialSc.faseTutorial == 6)
+        {
+            Camera.main.gameObject.GetComponent<Renin>().reninDiscovered = true;
+        }
+    }
     public void SalirCiudad()
     {
         kidney.gameObject.SetActive(false);
+    }
+
+    IEnumerator BajarPresion()
+    {
+        while(pressurePercentage >= 40)
+        {
+            pressurePercentage -= 0.5f;
+            yield return new WaitForSeconds(.1f);
+
+        }
+        while (pressurePercentage >= 30)
+        {
+            pressurePercentage -= 0.5f;
+            yield return new WaitForSeconds(.25f);
+        }
+
     }
 }

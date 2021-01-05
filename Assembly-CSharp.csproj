@@ -69,6 +69,7 @@
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathPlacer.cs" />
     <Compile Include="Assets\Scripts\Scroll.cs" />
     <Compile Include="Assets\Scripts\Tutorial_Dialogs.cs" />
+    <Compile Include="Assets\Scripts\UISpritesAnimation.cs" />
     <Compile Include="Assets\Scripts\FollowthePath.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
     <Compile Include="Assets\Scripts\Tutorial.cs" />
@@ -78,7 +79,6 @@
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathFollower.cs" />
     <Compile Include="Assets\Scripts\ClickOnCity.cs" />
     <Compile Include="Assets\Scripts\MainUIController.cs" />
-    <Compile Include="Assets\Scripts\UISpritesAnimation.cs" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>C:/Users/alvar/Desktop/Transversal/GitHub/Farmacia-2020/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>

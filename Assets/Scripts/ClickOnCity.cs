@@ -139,13 +139,15 @@ public class ClickOnCity : MonoBehaviour
     public void Kidney(GameObject kindey)
     {
         UiCon.KidneyEnter();
-        this.gameObject.GetComponent<Tutorial>().ActivarTutorial();
+        //this.gameObject.GetComponent<Tutorial>().ActivarTutorial();
         Camera.main.transform.position = kindey.transform.position;
-        kindey.transform.GetChild(0).gameObject.SetActive(true);
+        //kindey.transform.GetChild(0).gameObject.SetActive(true);
         UiCon.kidney.gameObject.SetActive(true);
         Camera.main.gameObject.GetComponent<Tutorial>().toglow = false;
         //llamas al script del tutorial, y dentro de él llamas al objeto que tiene la luz, dentro del él accedes al script y dentro de este script accedes a la variable de instensity
         Camera.main.gameObject.GetComponent<Tutorial>().kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = 0;
+        Camera.main.gameObject.GetComponent<Tutorial>().PassDialog();
+        //bajar presión
 
     }
 

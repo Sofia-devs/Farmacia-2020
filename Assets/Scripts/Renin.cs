@@ -27,17 +27,11 @@ public class Renin : MonoBehaviour
     {
 
         anim = RiverBarrierContainer.GetComponent<Animator>();
-
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
-
 
         Timer += Time.deltaTime; //Un simple cronómetro
 

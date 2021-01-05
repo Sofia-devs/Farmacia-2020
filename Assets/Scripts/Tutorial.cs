@@ -13,11 +13,16 @@ public class Tutorial : MonoBehaviour
     public GameObject kidneyFilterLight;
     public bool toglow = false;
     private GameObject liver;
+    public GameObject minero;
+    private GameObject mineroLight;
+
 
     private void Start()
     {
         liver = GameObject.Find("Liver");
         liver.GetComponent<Collider2D>().enabled = false;
+
+        mineroLight = minero.transform.GetChild(0).gameObject;
         ActivarTutorial();
     }
     public void ActivarTutorial()
@@ -30,6 +35,13 @@ public class Tutorial : MonoBehaviour
     {
         if(toglow)
             kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = Mathf.PingPong(Time.time, 1);
+
+        if(faseTutorial == 6)
+        {
+            mineroLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = Mathf.PingPong(Time.time, 1);
+
+        }
+
     }
     public void AvatarAparece()
     {
@@ -56,4 +68,8 @@ public class Tutorial : MonoBehaviour
         liver.GetComponent<Collider2D>().enabled = true;
 
     }
+    //fase 3 señalar botón pause
+    //fase 4 presión baja
+    //fase 6 señalar minero (hecho)
+    //fase 6 + pulsar minero = activar renina (hecho)
 }
