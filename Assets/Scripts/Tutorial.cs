@@ -6,17 +6,24 @@ using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
     public GameObject panelAvatar;
+    public GameObject panelPause;
     public int faseTutorial;
     public string[] dialogPhraseTutorial;
     public string[] dialogPhraseTutorialLiver;
     public Text dialogText;
     public bool borroso;
-    public GameObject kidneyFilterLight;
-    public bool toglow = false;
+    
     private GameObject liver;
     public GameObject minero;
-    private GameObject mineroLight;
+    
     public GameObject barco;
+
+    [Header("Glow Effects")]
+    public bool toglow = false;
+    public bool pauseGlow = false;
+    public GameObject kidneyFilterLight;
+    public GameObject mineroLight;
+    private GameObject pauseLight;
 
     private void Start()
     {
@@ -25,6 +32,8 @@ public class Tutorial : MonoBehaviour
 
         mineroLight = minero.transform.GetChild(0).gameObject;
         ActivarTutorial();
+
+        pauseLight = panelPause.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
     }
     public void ActivarTutorial()
     {
@@ -37,7 +46,18 @@ public class Tutorial : MonoBehaviour
         if(toglow)
             kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = Mathf.PingPong(Time.time, 1);
 
-        if(faseTutorial == 6)
+        if (pauseGlow)
+        {
+            pauseLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = Mathf.PingPong(Time.time, 1.5f);
+        }
+
+        if (faseTutorial == 4)
+        {
+            pauseGlow = false;
+            pauseLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = 0;
+        }
+
+        if (faseTutorial == 6)
         {
             mineroLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = Mathf.PingPong(Time.time, 1);
 

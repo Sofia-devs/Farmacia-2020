@@ -1688,10 +1688,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelAvatar: {fileID: 558824508}
+  panelPause: {fileID: 285454950}
   faseTutorial: 0
   dialogPhraseTutorial:
-  - Hi! Welcom to Kidney Valley, you must be the new river supervisor. Click on me
-    when you need more info!
+  - Hi! Welcome to Kidney Valley, you must be the new river supervisor. Click on
+    me when you need more info!
   - So that you can review each city, click on them
   - Here we get rid of impurities in the rivers and produce renin when necessary
   - Remember to take breaks during work
@@ -1711,10 +1712,12 @@ MonoBehaviour:
   - We need Angiotensin I, talk to the fishermen
   dialogText: {fileID: 172338668}
   borroso: 0
-  kidneyFilterLight: {fileID: 757991250}
-  toglow: 0
   minero: {fileID: 1662466117}
   barco: {fileID: 718416729}
+  toglow: 0
+  pauseGlow: 0
+  kidneyFilterLight: {fileID: 757991250}
+  mineroLight: {fileID: 0}
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2918,7 +2921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_Color: {r: 0.7264151, g: 0.34607512, b: 0.34607512, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -3161,7 +3164,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.55
+  m_Intensity: 0
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}

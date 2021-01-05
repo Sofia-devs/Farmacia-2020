@@ -42,6 +42,7 @@ public class MainUIController : MonoBehaviour
     public Rect zoom;
     public GameObject pescador;
 
+
     private Tutorial tutorialSc;
 
     public void Start()
@@ -68,6 +69,7 @@ public class MainUIController : MonoBehaviour
                 print("glow");
                 tutorialSc.toglow = true;
             }
+            
             //pressure
             if (tutorialSc.faseTutorial == 4)
             {
@@ -145,6 +147,11 @@ public class MainUIController : MonoBehaviour
     {
         if (cityState == "Kidney")
         {
+            //activar el glow del botón de pause 
+            if (tutorialSc.faseTutorial == 3)
+            {
+                tutorialSc.pauseGlow = true;
+            }
             //renin update
             resourcePercentage = reninSc.reninValue;
             resource.text = "Renin";
@@ -203,6 +210,7 @@ public class MainUIController : MonoBehaviour
         {
             Camera.main.gameObject.GetComponent<Renin>().reninDiscovered = true;
             tutorialSc.PassDialog();
+            Camera.main.GetComponent<Tutorial>().mineroLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = 0;
         }
     }
     public void SalirCiudad()
