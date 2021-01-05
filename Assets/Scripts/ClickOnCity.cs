@@ -38,7 +38,7 @@ public class ClickOnCity : MonoBehaviour
 
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            if (hit.collider.gameObject.transform.parent.name == "Cities")
+            if (hit.collider.gameObject.transform.parent.name == "Cities" && UiCon.ciudadesActivadas)
             {
                 mapa.GetComponent<Scroll>().incity = true;
                 switch (hit.collider.gameObject.name)
@@ -143,6 +143,9 @@ public class ClickOnCity : MonoBehaviour
         Camera.main.transform.position = kindey.transform.position;
         kindey.transform.GetChild(0).gameObject.SetActive(true);
         UiCon.kidney.gameObject.SetActive(true);
+        Camera.main.gameObject.GetComponent<Tutorial>().toglow = false;
+        //llamas al script del tutorial, y dentro de él llamas al objeto que tiene la luz, dentro del él accedes al script y dentro de este script accedes a la variable de instensity
+        Camera.main.gameObject.GetComponent<Tutorial>().kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = 0;
 
     }
 

@@ -15,7 +15,7 @@ public class Renin : MonoBehaviour
     public GameObject RiverBarrierContainer;
 
     public GameObject kidneyFilterLight;
-    bool activarKidneyFilter = false;
+    //bool activarKidneyFilter = false;
     public MainUIController uiCon;
 
 
@@ -55,8 +55,9 @@ public class Renin : MonoBehaviour
             if (reninValue > 80)
             {
 
-                activarKidneyFilter = true;
+                //activarKidneyFilter = true;
 
+                kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().color = Color.red;
                 kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = Mathf.PingPong(Time.time, 1);
     
                 if (uiCon.avatarState != "Stressed") // esto es para que solamente cambie una vez de avatar
@@ -74,12 +75,14 @@ public class Renin : MonoBehaviour
             {
                 if (uiCon.avatarState != "Happy")
                 {
+                    kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().color = Color.white;
+
                     uiCon.Avatar("Happy");
                 }
 
 
                     kidneyFilterLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = 0;
-                activarKidneyFilter = true;
+                //activarKidneyFilter = true;
             }
 
         }

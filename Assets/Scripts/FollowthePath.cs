@@ -15,6 +15,8 @@ public class FollowthePath : MonoBehaviour
     //Index of current waypoint from which boat walks to the next
     private int waypointIndex = 0;
 
+    public bool activarBoat = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +37,7 @@ public class FollowthePath : MonoBehaviour
     {
         //If boat didn't reach last waypoint it can move
         //If reached last waypoint then it stops
-        if (waypointIndex <= waypoints.Length - 1)
+        if (waypointIndex <= waypoints.Length - 1 && activarBoat)
         {
             //Move boat from current waypoint to the next one using MoveTowards method
             transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);

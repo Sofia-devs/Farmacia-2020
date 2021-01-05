@@ -35,6 +35,7 @@ public class MainUIController : MonoBehaviour
 
     [Header("Ciudades")]
     public Image kidney;
+    public bool ciudadesActivadas = false;
 
     private Tutorial tutorialSc;
 
@@ -44,18 +45,21 @@ public class MainUIController : MonoBehaviour
     }
     public void AlPulsarSA()
     {
-        //if (!panelSADout)
-        //{
-        //    panelSADout = true;
-        //    panelSAD.SetActive(true);
-        //}
-        //else
-        //{
-        //    panelSADout = false;
-        //    panelSAD.SetActive(false);
-        //}
-        tutorialSc.PassDialog();
 
+        if (!ciudadesActivadas)
+        {
+            ciudadesActivadas = true;
+        }
+        if((tutorialSc.faseTutorial >= 2 && tutorialSc.faseTutorial <= 5) || tutorialSc.faseTutorial == 7 || tutorialSc.faseTutorial == 0)
+        {
+            tutorialSc.PassDialog();
+            if (tutorialSc.faseTutorial == 1)
+            {
+
+                print("glow");
+                tutorialSc.toglow = true;
+            }
+        }
     }
 
     public void AlPulsarPause()
