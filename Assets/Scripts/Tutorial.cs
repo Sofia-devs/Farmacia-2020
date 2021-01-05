@@ -66,10 +66,10 @@ public class Tutorial : MonoBehaviour
     public void ActivarLiver()
     {
         liver.GetComponent<Collider2D>().enabled = true;
-
     }
-    //fase 3 señalar botón pause
-    //fase 4 presión baja
+    //poner estres 
+    //fase 3 señalar botón pause (postpuesto)
+    //fase 4 presión baja (hecho)
     //fase 6 señalar minero (hecho)
     //fase 6 + pulsar minero = activar renina (hecho)
 }

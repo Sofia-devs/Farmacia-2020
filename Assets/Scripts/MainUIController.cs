@@ -13,6 +13,7 @@ public class MainUIController : MonoBehaviour
     public float resourcePercentage;
     public Renin reninSc;
     public string cityState;
+    public Text increaseText;
 
     [Header("PanelPause")]
     public GameObject panelPauseDesplegable;
@@ -63,6 +64,12 @@ public class MainUIController : MonoBehaviour
                 print("glow");
                 tutorialSc.toglow = true;
             }
+            //pressure
+            if (tutorialSc.faseTutorial == 4)
+            {
+                StartCoroutine(BajarPresion());
+            }
+
         }
     }
 
@@ -80,33 +87,77 @@ public class MainUIController : MonoBehaviour
         }
     }
 
+    public void AlPulsarIncrease()
+    {
+        if(tutorialSc.faseTutorial == 8)
+        {
+            tutorialSc.PassDialog();
+            if (increaseText.text == "Increase")
+            {
+                increaseText.text = "Stabilize";
+                reninSc.reninProdSpeed = 6;
+            }
+            else if (increaseText.text == "Stabilize")
+            {
+                increaseText.text = "Increase";
+                reninSc.reninProdSpeed = 2;
+            }
+        }
+
+    }
+
+    public void AlPulsarSendTo()
+    {
+        if (tutorialSc.faseTutorial >= 9 && reninSc.reninValue >= 50)
+        {
+            if(reninSc.reninValue <= 80)
+            {
+                ReninSent(reninSc.reninValue);
+                reninSc.reninValue = 0;
+            }
+            else
+            {
+                reninSc.reninValue -= 80;
+                ReninSent(80);
+            }
+
+        }
+    }
+
     public void AlPulsarPlayMenu()
     {
         SceneManager.LoadScene(1);
     }
 
+
     private void Update()
     {
         if(cityState == "Kidney")
         {
-            //renin
+            //renin update
             resourcePercentage = reninSc.reninValue;
             resource.text = "Renin";
             if(resourcePercentage <= 100)
             {
                 resourceImage.fillAmount = resourcePercentage/100;
             }
-
-            //pressure
-            if(tutorialSc.faseTutorial == 4 && pressureState != "Bajando")
+            if(resourcePercentage <= 100)
             {
-                pressureState = "Bajando";
-                StartCoroutine(BajarPresion());
+                resourcePercentage = 100;
             }
+            //pressure update
             if (pressurePercentage <= 100)
             {
                 pressureImage.fillAmount = pressurePercentage / 100;
-                print(pressurePercentage);
+                if(tutorialSc.faseTutorial >= 6 && reninSc.reninValue >= 80 && pressureState != "Subiendo")
+                {
+                    pressureState = "Subiendo";
+                    StartCoroutine(SubirPresion());
+                }
+            }
+            else if(pressurePercentage >= 100)
+            {
+                pressurePercentage = 100;
             }
 
         }
@@ -136,11 +187,14 @@ public class MainUIController : MonoBehaviour
         if (tutorialSc.faseTutorial == 6)
         {
             Camera.main.gameObject.GetComponent<Renin>().reninDiscovered = true;
+            tutorialSc.PassDialog();
         }
     }
     public void SalirCiudad()
     {
         kidney.gameObject.SetActive(false);
+        GameObject.Find("Mapa").gameObject.GetComponent<Scroll>().incity = false;
+        Camera.main.orthographicSize = 5;
     }
 
     IEnumerator BajarPresion()
@@ -157,5 +211,21 @@ public class MainUIController : MonoBehaviour
             yield return new WaitForSeconds(.25f);
         }
 
+    }    
+    
+    IEnumerator SubirPresion()
+    {
+        while(pressurePercentage <= 90)
+        {
+            pressurePercentage += 0.5f;
+            yield return new WaitForSeconds(.1f);
+        }
+        yield return null;
+    }
+
+    public void ReninSent(float reninvalue)
+    {
+        reninSc.reninDiscovered = false;
+        print(reninvalue);
     }
 }

@@ -63,35 +63,30 @@ public class ClickOnCity : MonoBehaviour
                 Camera.main.transform.position =new Vector3(hit.collider.gameObject.transform.position.x, hit.collider.gameObject.transform.position.y, -10);
                 MainCamera.GetComponent<Camera>().orthographicSize = 2;
             }
-            else
-            {
-                print("patata");
-            }
-            
 
-            if (hit.collider.gameObject.tag == "AumentoRenina" && velocidadProdRenina < 6)
-            {
+            //if (hit.collider.gameObject.tag == "AumentoRenina" && velocidadProdRenina < 6)
+            //{
 
-                velocidadProdRenina = MainCamera.GetComponent<Renin>().reninProdSpeed;
+            //    velocidadProdRenina = MainCamera.GetComponent<Renin>().reninProdSpeed;
 
 
-                velocidadProdRenina += 4;                                               //le sumamos 4 puntos a esa variable
-                MainCamera.GetComponent<Renin>().reninProdSpeed = velocidadProdRenina; //deovlvemos esa información a la varibale reninProdSpeed del script Renin, ya que hasta el momento solo la habíamos cambiado en este script, 
-                                                                                      //pero aún no se lo habíamos comunicado a dicho script
+            //    velocidadProdRenina += 4;                                               //le sumamos 4 puntos a esa variable
+            //    MainCamera.GetComponent<Renin>().reninProdSpeed = velocidadProdRenina; //deovlvemos esa información a la varibale reninProdSpeed del script Renin, ya que hasta el momento solo la habíamos cambiado en este script, 
+            //                                                                          //pero aún no se lo habíamos comunicado a dicho script
 
-            }
+            //}
 
-            if (hit.collider.gameObject.tag == "EstabilizarRenina" && velocidadProdRenina >= 6)
-            {
+            //if (hit.collider.gameObject.tag == "EstabilizarRenina" && velocidadProdRenina >= 6)
+            //{
 
-                velocidadProdRenina = MainCamera.GetComponent<Renin>().reninProdSpeed;
+            //    velocidadProdRenina = MainCamera.GetComponent<Renin>().reninProdSpeed;
 
 
-                velocidadProdRenina -= 4;                                               //le sumamos 4 puntos a esa variable
-                MainCamera.GetComponent<Renin>().reninProdSpeed = velocidadProdRenina; //deovlvemos esa información a la varibale reninProdSpeed del script Renin, ya que hasta el momento solo la habíamos cambiado en este script, 
-                                                                                      //pero aún no se lo habíamos comunicado a dicho script
+            //    velocidadProdRenina -= 4;                                               //le sumamos 4 puntos a esa variable
+            //    MainCamera.GetComponent<Renin>().reninProdSpeed = velocidadProdRenina; //deovlvemos esa información a la varibale reninProdSpeed del script Renin, ya que hasta el momento solo la habíamos cambiado en este script, 
+            //                                                                          //pero aún no se lo habíamos comunicado a dicho script
 
-            }
+            //}
 
             if (hit.collider.gameObject.tag == "SendToActivado" && reninaValor < 55) //Si: 1º - Se pulsa sobre un objeto con el tag designado y 2º reninaValor es menor de 55
             {
