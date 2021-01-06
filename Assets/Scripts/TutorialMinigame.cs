@@ -103,7 +103,7 @@ public class TutorialMinigame : MonoBehaviour
         if (faseTutorial == 0 && activarGlowRio) //cuando la fase del tuto sea 0 y la bool activarGlowRio este en true -- No hace falta poner true, porque lo asume, para que ocurriera en flase con poner una !delante valdría
         {
               
-            riverPointLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = Mathf.PingPong(Time.time, 1); 
+            riverPointLight.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = Mathf.PingPong(Time.time / 3, 0.35f); 
 
         }
         else

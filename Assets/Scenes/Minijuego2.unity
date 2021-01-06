@@ -646,9 +646,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cc27e95868ab32345b74b8338c01ebed, type: 3}
-  m_Color: {r: 0.19953722, g: 0.47237155, b: 0.7169812, a: 1}
+  m_SortingOrder: -5
+  m_Sprite: {fileID: 21300000, guid: f3cf51c22065c5b468bc2d9df1858760, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -667,7 +667,7 @@ Transform:
   m_GameObject: {fileID: 293788172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 128.93, y: 50.91, z: 1}
+  m_LocalScale: {x: 14, y: 14, z: 1}
   m_Children:
   - {fileID: 2035787182}
   m_Father: {fileID: 0}
@@ -731,9 +731,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -10
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.67058825, g: 0.49825737, b: 0.39607844, a: 1}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 79f7ee94a80e0054d978d14c3b21d5e5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -751,8 +751,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386288041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.382, y: -0.417, z: 0}
-  m_LocalScale: {x: 211.71663, y: 120.545586, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 14, y: 14, z: 2.8112}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -769,6 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea54842d3330a04a885bd9ddaf08b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  incity: 0
 --- !u!61 &386288045
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -784,9 +785,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 1.28, y: 0.72}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -807,7 +808,7 @@ GameObject:
   - component: {fileID: 458941677}
   - component: {fileID: 458941676}
   m_Layer: 5
-  m_Name: PanelRecursos
+  m_Name: PanelPescar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1248,6 +1249,7 @@ MonoBehaviour:
   reninaSc: {fileID: 519420033}
   UiCon: {fileID: 1815504301}
   reninaEnviada: 0
+  mapa: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1323,6 +1325,7 @@ MonoBehaviour:
   reninDiscovered: 0
   Timer: 0
   RiverBarrierContainer: {fileID: 0}
+  kidneyFilterLight: {fileID: 0}
   uiCon: {fileID: 1815504301}
   speed: 0
 --- !u!114 &519420034
@@ -1735,6 +1738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 825509543}
   - component: {fileID: 825509542}
+  - component: {fileID: 825509544}
   m_Layer: 0
   m_Name: AlvaritoPescador
   m_TagString: Untagged
@@ -1782,12 +1786,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e9f34bb28a6f54e4592363b285132632, type: 3}
+  m_Sprite: {fileID: 328086577413106918, guid: a4bfa78759ac74149a38a6a13cc0e175, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5, y: 5}
+  m_Size: {x: 5.5099998, y: 14.511553}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1801,12 +1805,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825509541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4, y: -1.7, z: 1}
-  m_LocalScale: {x: 0.21512, y: 0.21512, z: 0.21512}
-  m_Children: []
+  m_LocalPosition: {x: 0.42, y: -0.78, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1955787118}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &825509544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825509541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589da0457792b824cb49888f5ddaf28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishingArea: {fileID: 1955787115}
+  cooldown: 0.5
 --- !u!1 &951794667
 GameObject:
   m_ObjectHideFlags: 0
@@ -2442,6 +2461,7 @@ MonoBehaviour:
   resourcePercentage: 0
   reninSc: {fileID: 519420033}
   cityState: 
+  increaseText: {fileID: 0}
   panelPauseDesplegable: {fileID: 1612613110}
   panelSAD: {fileID: 265320580}
   tA1: {fileID: 0}
@@ -2454,6 +2474,125 @@ MonoBehaviour:
   currAvatar: {fileID: 491988034}
   pressurePercentage: 0
   pressureImage: {fileID: 515290991}
+  kidney: {fileID: 0}
+  liver: {fileID: 0}
+  ciudadesActivadas: 0
+  zoom:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  pescador: {fileID: 0}
+--- !u!1 &1955787115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1955787118}
+  - component: {fileID: 1955787117}
+  - component: {fileID: 1955787116}
+  m_Layer: 0
+  m_Name: FishingArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!61 &1955787116
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955787115}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.86, y: 5.5}
+  m_EdgeRadius: 0
+--- !u!212 &1955787117
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955787115}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1955787118
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955787115}
+  m_LocalRotation: {x: 0, y: 0, z: 0.44299296, w: 0.8965251}
+  m_LocalPosition: {x: 1.61, y: -1.97, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 825509543}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 52.59}
 --- !u!1 &2035787181
 GameObject:
   m_ObjectHideFlags: 0
@@ -2480,7 +2619,7 @@ Transform:
   m_GameObject: {fileID: 2035787181}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.14231251, y: 0.027658463, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293788174}
   m_RootOrder: 0
@@ -2497,14 +2636,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LightType: 0
+  m_LightType: 2
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
-  m_LightCookieSprite: {fileID: 21300000, guid: 049c8a7821177594692244298d82e4af, type: 3}
+  m_LightCookieSprite: {fileID: 21300000, guid: f3cf51c22065c5b468bc2d9df1858760, type: 3}
   m_UseNormalMap: 0
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
@@ -2618,7 +2757,7 @@ GameObject:
   - component: {fileID: 2100742253}
   - component: {fileID: 2100742252}
   m_Layer: 5
-  m_Name: ButtonEnviar
+  m_Name: ButtonPescar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2686,7 +2825,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2100742253}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 825509544}
+        m_TargetAssemblyTypeName: Fishing, Assembly-CSharp
+        m_MethodName: Fish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2100742253
 MonoBehaviour:
   m_ObjectHideFlags: 0
