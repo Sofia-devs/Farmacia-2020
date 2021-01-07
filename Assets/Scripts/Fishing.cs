@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Fishing : MonoBehaviour
 {
-    public GameObject fishingArea;
     FollowthePath pathSc;
     GameObject fisherman;
     public float cooldown;
     public List<GameObject> waypointsCheck;
-
+    public Sprite[] pescadorSprites;
+    SpriteRenderer pescadorSR;
+    int numsprite = 0;
     // Start is called before the first frame update
     void Start()
     {
         fisherman = gameObject;
-
+        pescadorSR = GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
@@ -27,7 +29,6 @@ public class Fishing : MonoBehaviour
 
     public void Fish()
     {
-        fishingArea.SetActive(true);
         waypointsCheck.AddRange(GameObject.FindGameObjectsWithTag("Angio"));
         waypointsCheck.AddRange(GameObject.FindGameObjectsWithTag("BadResource"));
         foreach (GameObject waypoints in waypointsCheck)
@@ -40,12 +41,15 @@ public class Fishing : MonoBehaviour
             }
         }
 
-        //Invoke("NetUp", cooldown);
+        //numsprite = 0;
+        //StartCoroutine(Anim());
+        
         NetUp();
     }
 
     void NetUp()
     {
+        GetComponent<UISpritesAnimation>().enabled = true;
         if(pathSc != null)
         {
             if (pathSc.Destruir() == "Angio")
@@ -53,7 +57,17 @@ public class Fishing : MonoBehaviour
                 print("angio");
             }
         }
-
-        fishingArea.SetActive(false);
     }
+
+    //IEnumerator Anim()
+    //{
+    //    while (numsprite <= (pescadorSprites.Length-1))
+    //    {
+    //        pescadorSR.sprite = pescadorSprites[numsprite];
+    //        numsprite++;
+
+    //    }
+    //    //yield return null;
+    //    yield return null;
+    //}
 }
