@@ -29,6 +29,8 @@ public class Fishing : MonoBehaviour
 
     public void Fish()
     {
+        NetUp();
+
         waypointsCheck.AddRange(GameObject.FindGameObjectsWithTag("Angio"));
         waypointsCheck.AddRange(GameObject.FindGameObjectsWithTag("BadResource"));
         foreach (GameObject waypoints in waypointsCheck)
@@ -36,18 +38,17 @@ public class Fishing : MonoBehaviour
             if(waypoints.GetComponent<FollowthePath>().waypointIndex == 2)
             {
                 print("pescar");
-                waypoints.GetComponent<FollowthePath>().gotocesta = true;
                 pathSc = waypoints.GetComponent<FollowthePath>();
+                waypoints.GetComponent<FollowthePath>().gotocesta = true;
             }
         }
 
         //numsprite = 0;
         //StartCoroutine(Anim());
-        
-        NetUp();
+
     }
 
-    void NetUp()
+    public void NetUp()
     {
         GetComponent<UISpritesAnimation>().enabled = true;
         if(pathSc != null)

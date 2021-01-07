@@ -89,5 +89,6 @@ public class FollowthePath : MonoBehaviour
         waypointIndex = 0;
         gotocesta = false;
         transform.position = waypoints [waypointIndex].transform.position;
+        //GameObject.FindGameObjectWithTag("Pescador").GetComponent<UISpritesAnimation>().bajar = true ;
     }
 }

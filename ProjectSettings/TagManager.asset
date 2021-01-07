@@ -10,6 +10,7 @@ TagManager:
   - SendToActivado
   - Angio
   - BadResource
+  - Pescador
   layers:
   - Default
   - TransparentFX
