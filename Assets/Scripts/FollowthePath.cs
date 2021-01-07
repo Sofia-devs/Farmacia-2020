@@ -7,13 +7,13 @@ public class FollowthePath : MonoBehaviour
     //Arry of waypoints to walk from one to the next one
     [SerializeField]
     private Transform[] waypoints;
-    private Transform cesta;
+    public Transform cesta;
     //Walk speed
     [SerializeField]
     private float moveSpeed = 2f;
 
     //Index of current waypoint from which boat walks to the next
-    private int waypointIndex = 0;
+    public int waypointIndex = 0;
 
     public bool activarBoat = false;
 
@@ -43,6 +43,10 @@ public class FollowthePath : MonoBehaviour
         {
             if (!gotocesta)
             {
+                if(moveSpeed != 2)
+                {
+                    moveSpeed = 2;
+                }
                 //Move boat from current waypoint to the next one using MoveTowards method
                 transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
 
@@ -53,14 +57,37 @@ public class FollowthePath : MonoBehaviour
                     if(waypointIndex == waypoints.Length)
                     {
                         waypointIndex = 0;
+                        transform.position = waypoints[waypointIndex].transform.position;
+
                     }
                 }
             }
             else
             {
+                print("cesta");
+                if (moveSpeed != 5)
+                {
+                    moveSpeed = 5;
+                }
                 transform.position = Vector2.MoveTowards(transform.position, cesta.position, moveSpeed * Time.deltaTime);
-                waypointIndex = 0;
+                //waypointIndex = 0;
+                if(transform.position == cesta.position)
+                {
+                    Invoke("Restart", 1);
+                }
             }
         }
+    }
+
+    public string Destruir()
+    {
+        return (gameObject.tag);
+    }
+
+    void Restart()
+    {
+        waypointIndex = 0;
+        gotocesta = false;
+        transform.position = waypoints [waypointIndex].transform.position;
     }
 }

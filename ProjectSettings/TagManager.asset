@@ -8,6 +8,8 @@ TagManager:
   - AumentoRenina
   - EstabilizarRenina
   - SendToActivado
+  - Angio
+  - BadResource
   layers:
   - Default
   - TransparentFX
