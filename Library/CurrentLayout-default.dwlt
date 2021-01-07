@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 78
+  controlID: 17
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 128
+  controlID: 18
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 106
+  controlID: 19
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -399,9 +399,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 8ef5ffffecf6ffff204800003048000086480000bc480000
+      m_SelectedIDs: 48ecffff
+      m_LastClickedID: -5048
+      m_ExpandedIDs: 36e4ffff7ee6ffff98e7ffff56f5ffff80f6ffff4cf9ffff5afbffff384600003c4600008a46000086470000044800006a480000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -461,9 +461,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.6263072, y: -2.3862848, z: 8.316108}
+    m_Target: {x: 2.804027, y: 0.16356918, z: 5.587012}
     speed: 2
-    m_Value: {x: 3.6263072, y: -2.3862848, z: 8.316108}
+    m_Value: {x: 2.804027, y: 0.16356918, z: 5.587012}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -514,9 +514,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.2394123
+    m_Target: 6.055147
     speed: 2
-    m_Value: 6.2394123
+    m_Value: 6.055147
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -640,21 +640,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites
+    - Assets/Scripts
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\alvar\Desktop\Transversal\GitHub\Farmacia-2020
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 8}
-    m_SelectedIDs: 66470000
-    m_LastClickedID: 18278
-    m_ExpandedIDs: 00000000624700006447000066470000684700006a4700006c4700006e470000704700007247000074470000
+    m_SelectedIDs: b4450000
+    m_LastClickedID: 17844
+    m_ExpandedIDs: 000000002a4500002c4500002e45000030450000324500003445000036450000384500003a4500003c450000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -682,7 +682,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000624700006447000066470000684700006a4700006c4700006e470000704700007247000074470000
+    m_ExpandedIDs: 000000002a4500002c4500002e45000030450000324500003445000036450000384500003a4500003c450000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 18632
+  m_LastSelectedObjectID: -6394
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52

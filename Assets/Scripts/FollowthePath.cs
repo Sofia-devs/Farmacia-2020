@@ -7,7 +7,7 @@ public class FollowthePath : MonoBehaviour
     //Arry of waypoints to walk from one to the next one
     [SerializeField]
     private Transform[] waypoints;
-
+    private Transform cesta;
     //Walk speed
     [SerializeField]
     private float moveSpeed = 2f;
@@ -16,6 +16,8 @@ public class FollowthePath : MonoBehaviour
     private int waypointIndex = 0;
 
     public bool activarBoat = false;
+
+    public bool gotocesta = false;
 
     // Start is called before the first frame update
     void Start()
@@ -39,13 +41,25 @@ public class FollowthePath : MonoBehaviour
         //If reached last waypoint then it stops
         if (waypointIndex <= waypoints.Length - 1 && activarBoat)
         {
-            //Move boat from current waypoint to the next one using MoveTowards method
-            transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
-
-            //If boat reaches position of waypoint he walked towards then waypointIndex is increased by 1 and boat starts to walk to the next waypoint
-            if (transform.position == waypoints[waypointIndex].transform.position)
+            if (!gotocesta)
             {
-                waypointIndex++;
+                //Move boat from current waypoint to the next one using MoveTowards method
+                transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+
+                //If boat reaches position of waypoint he walked towards then waypointIndex is increased by 1 and boat starts to walk to the next waypoint
+                if (transform.position == waypoints[waypointIndex].transform.position)
+                {
+                    waypointIndex++;
+                    if(waypointIndex == waypoints.Length)
+                    {
+                        waypointIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, cesta.position, moveSpeed * Time.deltaTime);
+                waypointIndex = 0;
             }
         }
     }
