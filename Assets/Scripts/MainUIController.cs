@@ -45,6 +45,14 @@ public class MainUIController : MonoBehaviour
 
     private Tutorial tutorialSc;
 
+    public Button closeButton;
+    public Button playButton;
+    public Button settingsButton;
+    public Button creditsButton;
+    public Button exitButton;
+
+    public Text creditsText;
+
     public void Start()
     {
         tutorialSc = Camera.main.gameObject.GetComponent<Tutorial>();
@@ -140,6 +148,46 @@ public class MainUIController : MonoBehaviour
     public void AlPulsarPlayMenu()
     {
         SceneManager.LoadScene(1);
+    }
+    public void AlPulsarSettingsMenu()
+    {
+        closeButton.transform.position = new Vector3(968.5f, 526, 0);
+
+        playButton.transform.position = new Vector3(1200, 700, 0);
+
+        settingsButton.transform.position = new Vector3(1200, 700, 0);
+        creditsButton.transform.position = new Vector3(1200, 700, 0);
+        exitButton.transform.position = new Vector3(1200, 700, 0);
+
+    }
+    public void AlPulsarCloseMenu()
+    {
+        closeButton.transform.position = new Vector3(1200, 700, 0);
+
+        playButton.transform.position = new Vector3(515.5f, 290, 0);
+
+        settingsButton.transform.position = new Vector3(515.5f, 125, 0);
+        creditsButton.transform.position = new Vector3(215.5f, 125, 0);
+        exitButton.transform.position = new Vector3(815.5f, 125, 0);
+
+        creditsText.transform.position = new Vector3(1200, 700, 0);
+    }
+    public void AlPulsarCreditsMenu()
+    {
+        closeButton.transform.position = new Vector3(968.5f, 526, 0);
+
+        playButton.transform.position = new Vector3(1200, 700, 0);
+
+        settingsButton.transform.position = new Vector3(1200, 700, 0);
+        creditsButton.transform.position = new Vector3(1200, 700, 0);
+        exitButton.transform.position = new Vector3(1200, 700, 0);
+
+        creditsText.transform.position = new Vector3(515.5f, 290, 0);
+
+    }
+    public void AlPulsarExitGame()
+    {
+        //exit game
     }
 
 
