@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class FollowthePath : MonoBehaviour
 {
-    //Arry of waypoints to walk from one to the next one
+    public Button botonPescar;
+
+    //Array of waypoints to walk from one to the next one
     [SerializeField]
     private Transform[] waypoints;
     public Transform cesta;
@@ -34,7 +38,7 @@ public class FollowthePath : MonoBehaviour
         Move();
     }
 
-    //Methhod that actualluy make boat walk
+    //Methhod that actually make boat walk
     private void Move()
     {
         //If boat didn't reach last waypoint it can move
@@ -64,6 +68,7 @@ public class FollowthePath : MonoBehaviour
             }
             else
             {
+
                 print("cesta");
                 if (moveSpeed != 5)
                 {
@@ -71,6 +76,9 @@ public class FollowthePath : MonoBehaviour
                 }
                 transform.position = Vector2.MoveTowards(transform.position, cesta.position, moveSpeed * Time.deltaTime);
                 //waypointIndex = 0;
+
+                botonPescar.GetComponent<Button>().enabled = true;
+
                 if(transform.position == cesta.position)
                 {
                     Invoke("Restart", 1);

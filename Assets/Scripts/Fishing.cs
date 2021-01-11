@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fishing : MonoBehaviour
 {
@@ -11,11 +12,18 @@ public class Fishing : MonoBehaviour
     public Sprite[] pescadorSprites;
     SpriteRenderer pescadorSR;
     int numsprite = 0;
+    public Button botonPescar;
+
+    public AudioClip correcto;
+
+    public AudioClip incorrecto;
+
     // Start is called before the first frame update
     void Start()
     {
         fisherman = gameObject;
         pescadorSR = GetComponent<SpriteRenderer>();
+        
         
     }
 
@@ -23,14 +31,16 @@ public class Fishing : MonoBehaviour
     void Update()
     {
         
+        
 
     }
 
 
     public void Fish()
     {
-        NetUp();
 
+       
+        
         waypointsCheck.AddRange(GameObject.FindGameObjectsWithTag("Angio"));
         waypointsCheck.AddRange(GameObject.FindGameObjectsWithTag("BadResource"));
         foreach (GameObject waypoints in waypointsCheck)
@@ -40,8 +50,12 @@ public class Fishing : MonoBehaviour
                 print("pescar");
                 pathSc = waypoints.GetComponent<FollowthePath>();
                 waypoints.GetComponent<FollowthePath>().gotocesta = true;
+                GetComponent<AudioSource>().Play();
+
             }
         }
+
+        NetUp();
 
         //numsprite = 0;
         //StartCoroutine(Anim());
@@ -51,12 +65,19 @@ public class Fishing : MonoBehaviour
     public void NetUp()
     {
         GetComponent<UISpritesAnimation>().enabled = true;
-        if(pathSc != null)
+        if(pathSc != null) //cuando pescamos algo sea bueno o malo
         {
-            if (pathSc.Destruir() == "Angio")
+           
+
+            if (pathSc.Destruir() == "Angio") 
             {
+                GetComponent<AudioSource>().clip = correcto;
+                GetComponent<AudioSource>().Play();
+                pathSc = null;
                 print("angio");
             }
+
+            botonPescar.GetComponent<Button>().enabled = false;
         }
     }
 
