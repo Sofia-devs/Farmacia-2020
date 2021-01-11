@@ -23,6 +23,9 @@ public class FollowthePath : MonoBehaviour
 
     public bool gotocesta = false;
 
+    public bool inminigame;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,10 +50,21 @@ public class FollowthePath : MonoBehaviour
         {
             if (!gotocesta)
             {
-                if(moveSpeed != 2)
+                if (!inminigame)
                 {
-                    moveSpeed = 2;
+                    if (moveSpeed != 2)
+                    {
+                        moveSpeed = 2;
+                    }
                 }
+                else
+                {
+                    if (moveSpeed != 5)
+                    {
+                        moveSpeed = 5;
+                    }
+                }
+
                 //Move boat from current waypoint to the next one using MoveTowards method
                 transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
 
@@ -70,9 +84,9 @@ public class FollowthePath : MonoBehaviour
             {
 
                 print("cesta");
-                if (moveSpeed != 5)
+                if (moveSpeed != 8)
                 {
-                    moveSpeed = 5;
+                    moveSpeed = 8;
                 }
                 transform.position = Vector2.MoveTowards(transform.position, cesta.position, moveSpeed * Time.deltaTime);
                 //waypointIndex = 0;
@@ -81,17 +95,11 @@ public class FollowthePath : MonoBehaviour
 
                 if(transform.position == cesta.position)
                 {
-                    Invoke("Restart", 1);
+                    Invoke("Restart", 0.5f);
                 }
             }
         }
     }
-
-    public string Destruir()
-    {
-        return (gameObject.tag);
-    }
-
     void Restart()
     {
         waypointIndex = 0;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Fishing : MonoBehaviour
@@ -17,6 +18,9 @@ public class Fishing : MonoBehaviour
     public AudioClip correcto;
 
     public AudioClip incorrecto;
+    public MainUIController uiCon;
+    public float Timer;
+    public bool active = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,13 +30,27 @@ public class Fishing : MonoBehaviour
         
         
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if (active)
+        {
+            if (uiCon.pressurePercentage < 100 && Timer <= 40)
+            {
+                Timer += Time.deltaTime; //Un simple cronómetro
+            }
+            else
+            {
+                if (uiCon.pressurePercentage >= 100)
+                {
+                    Fin(true);
+                }
+                else
+                {
+                    Fin(false);
+                }
+            }
+        }
         
-        
-
     }
 
 
@@ -45,9 +63,9 @@ public class Fishing : MonoBehaviour
         waypointsCheck.AddRange(GameObject.FindGameObjectsWithTag("BadResource"));
         foreach (GameObject waypoints in waypointsCheck)
         {
-            if(waypoints.GetComponent<FollowthePath>().waypointIndex == 2)
+            print("pescar");
+            if (waypoints.GetComponent<FollowthePath>().waypointIndex == 2)
             {
-                print("pescar");
                 pathSc = waypoints.GetComponent<FollowthePath>();
                 waypoints.GetComponent<FollowthePath>().gotocesta = true;
                 GetComponent<AudioSource>().Play();
@@ -56,9 +74,11 @@ public class Fishing : MonoBehaviour
         }
 
         NetUp();
+        pathSc = null;
+        waypointsCheck.Clear();
 
-        //numsprite = 0;
-        //StartCoroutine(Anim());
+    //numsprite = 0;
+    //StartCoroutine(Anim());
 
     }
 
@@ -67,29 +87,35 @@ public class Fishing : MonoBehaviour
         GetComponent<UISpritesAnimation>().enabled = true;
         if(pathSc != null) //cuando pescamos algo sea bueno o malo
         {
-           
-
-            if (pathSc.Destruir() == "Angio") 
+            botonPescar.GetComponent<Button>().enabled = false;
+            if (pathSc.gameObject.tag == "Angio") 
             {
                 GetComponent<AudioSource>().clip = correcto;
                 GetComponent<AudioSource>().Play();
-                pathSc = null;
                 print("angio");
+                uiCon.OngetAngio();
             }
-
-            botonPescar.GetComponent<Button>().enabled = false;
+            else if(pathSc.gameObject.tag == "BadResource")
+            {
+                GetComponent<AudioSource>().clip = incorrecto;
+                GetComponent<AudioSource>().Play();
+                print("bad");
+                uiCon.OngetBadRes();
+            }
         }
     }
 
-    //IEnumerator Anim()
-    //{
-    //    while (numsprite <= (pescadorSprites.Length-1))
-    //    {
-    //        pescadorSR.sprite = pescadorSprites[numsprite];
-    //        numsprite++;
+    void Fin(bool pass)
+    {
+        if (pass)
+        {
 
-    //    }
-    //    //yield return null;
-    //    yield return null;
-    //}
+        }
+        else
+        {
+            SceneManager.LoadScene("Fin");
+        }
+    }
+
+
 }

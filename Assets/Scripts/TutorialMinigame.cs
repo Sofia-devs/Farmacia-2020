@@ -16,10 +16,14 @@ public class TutorialMinigame : MonoBehaviour
 
     bool activarGlowRio = false;
 
+    public GameObject pescador;
+
     [Header("TutorialMinijuego")]
     public string avatarState;
     public Sprite[] avatares;
     public Image currAvatar;
+    public GameObject botonpescar;
+    public GameObject riverPaths;
 
     [Header("PanelPause")]
     public GameObject panelPauseDesplegable;
@@ -59,11 +63,20 @@ public class TutorialMinigame : MonoBehaviour
 
     }
 
-
     public void AlPulsarTM()
     {
-        faseTutorial++;                                             //al pulsar el botón del avatar, se sumará 1 a la variable de la fase del tutorial
-        dialogText.text = dialogPhraseTutorial[faseTutorial];       //con esto, actualizamos el nuevo valor de la variable, dde tal forma, que en la linea 46, sigue funcionando
+        if(faseTutorial < 1)
+        {
+            faseTutorial++;                                             //al pulsar el botón del avatar, se sumará 1 a la variable de la fase del tutorial
+            dialogText.text = dialogPhraseTutorial[faseTutorial];       //con esto, actualizamos el nuevo valor de la variable, dde tal forma, que en la linea 46, sigue funcionando
+        }
+        else
+        {
+            botonpescar.SetActive(true);
+            riverPaths.SetActive(true);
+            pescador.GetComponent<Fishing>().active = true;
+        }
+
     }
 
     public void AlPulsarPause()

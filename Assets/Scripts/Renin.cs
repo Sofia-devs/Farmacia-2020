@@ -12,29 +12,22 @@ public class Renin : MonoBehaviour
     public bool reninDiscovered = false;
     public float Timer;
 
-    public GameObject RiverBarrierContainer;
 
     public GameObject kidneyFilterLight;
     //bool activarKidneyFilter = false;
     public MainUIController uiCon;
 
 
-    Animator anim;
 
     public float speed;
     // Start is called before the first frame update
-    void Start()
-    {
-
-        anim = RiverBarrierContainer.GetComponent<Animator>();
-    }
 
     // Update is called once per frame
     void Update()
     {
 
         Timer += Time.deltaTime; //Un simple cronómetro
-
+        
         if (reninDiscovered == true) //Con esta booleana activamos la producción de renina en el tutorial
         {
 

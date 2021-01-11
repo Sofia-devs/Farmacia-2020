@@ -49,13 +49,22 @@ public class MainUIController : MonoBehaviour
     public Button exitButton;
 
     public Text creditsText;
+    public bool inminigame;
 
     public void Start()
     {
         tutorialSc = Camera.main.gameObject.GetComponent<Tutorial>();
         pressureState = "Estable";
-        pressurePercentage = 70;
-        pressureImage.fillAmount = pressurePercentage / 100;
+        if (!inminigame)
+        {
+            pressurePercentage = 70;
+            pressureImage.fillAmount = pressurePercentage / 100;
+        }
+        else
+        {
+            pressurePercentage = 0;
+            pressureImage.fillAmount = pressurePercentage / 100;
+        }
     }
     public void AlPulsarSA()
     {
@@ -155,7 +164,7 @@ public class MainUIController : MonoBehaviour
 
     private void Update()
     {
-        if (cityState == "Kidney")
+        if (cityState == "Kidney" && !inminigame)
         {
             //activar el glow del botón de pause 
             if (tutorialSc.faseTutorial == 3)
@@ -173,6 +182,7 @@ public class MainUIController : MonoBehaviour
             {
                 resourcePercentage = 100;
             }
+
             //pressure update
             if (pressurePercentage <= 100)
             {
@@ -262,5 +272,17 @@ public class MainUIController : MonoBehaviour
         print(reninvalue);
         SalirCiudad();
         tutorialSc.OutCity();        
+    }
+
+    public void OngetAngio()
+    {
+        pressurePercentage += 20;
+        pressureImage.fillAmount = pressurePercentage / 100;
+    }
+
+    public void OngetBadRes()
+    {
+        pressurePercentage -= 10;
+        pressureImage.fillAmount = pressurePercentage / 100;
     }
 }
