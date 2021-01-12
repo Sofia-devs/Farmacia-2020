@@ -52,9 +52,31 @@ public class FollowthePath : MonoBehaviour
             {
                 if (!inminigame)
                 {
+                    if(waypointIndex == 2)
+                    {
+                        gameObject.GetComponent<SpriteRenderer>().flipY = false;
+                        transform.rotation = Quaternion.Euler(0,0,0);
+                    }
+                    if (waypointIndex == 4)
+                    {
+                        gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                        transform.rotation = Quaternion.Euler(0, 0,90);
+
+                    }
+                    if(waypointIndex == 5)
+                    {
+                        gameObject.GetComponent<SpriteRenderer>().flipY = true;
+                        gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                        transform.rotation = Quaternion.Euler(0, 0,180);
+                    }
+
+
+
+
                     if (moveSpeed != 2)
                     {
                         moveSpeed = 2;
+
                     }
                 }
                 else
@@ -76,7 +98,11 @@ public class FollowthePath : MonoBehaviour
                     {
                         waypointIndex = 0;
                         transform.position = waypoints[waypointIndex].transform.position;
-                        gameObject.SetActive(false);
+                        if (!inminigame)
+                        {
+                            gameObject.SetActive(false);
+
+                        }
 
                     }
                 }

@@ -8,19 +8,25 @@ public class MainUIController : MonoBehaviour
 {
     [Header("PanelRecursos")]
     public Text resource;
+    public Button increasedecrease;
     public Image resourceImage;
     [Range(0, 100)]
     public float resourcePercentage;
     public Renin reninSc;
     public string cityState;
     public Text increaseText;
+    public Sprite increase;
+    public Sprite decrease;
 
     [Header("PanelPause")]
+    public Button botonPause;
+    public Sprite pause;
+    public Sprite play;
     public GameObject panelPauseDesplegable;
     bool panelPauseout;
 
     [Header("PanelSA")]
-    public GameObject panelSAD;
+    public Button panelSAD;
     public Text tA1;
     public Text tA2;
     public Text tA3;
@@ -36,11 +42,16 @@ public class MainUIController : MonoBehaviour
     private string pressureState;
 
     [Header("Ciudades")]
+    public GameObject farLiver;
+
     public Image kidney;
     public Image liver;
     public bool ciudadesActivadas = false;
     public Rect zoom;
     public GameObject pescador;
+    public AudioClip riñon;
+    public AudioClip mapa;
+    public AudioClip liveraudio;
 
 
     private Tutorial tutorialSc;
@@ -104,10 +115,12 @@ public class MainUIController : MonoBehaviour
         if (!panelPauseout)
         {
             panelPauseout = true;
+            botonPause.image.sprite = play;
             panelPauseDesplegable.SetActive(true);
         }
         else
         {
+            botonPause.image.sprite = pause;
             panelPauseout = false;
             panelPauseDesplegable.SetActive(false);
         }
@@ -119,14 +132,14 @@ public class MainUIController : MonoBehaviour
         {
             if(tutorialSc.faseTutorial == 8)
                 tutorialSc.PassDialog();
-            if (increaseText.text == "Increase")
+            if (increasedecrease.image.sprite == increase)
             {
-                increaseText.text = "Stabilize";
+                increasedecrease.image.sprite = decrease;
                 reninSc.reninProdSpeed = 6;
             }
-            else if (increaseText.text == "Stabilize")
+            else if (increasedecrease.image.sprite == decrease)
             {
-                increaseText.text = "Increase";
+                increasedecrease.image.sprite = increase;
                 reninSc.reninProdSpeed = 2;
             }
         }
@@ -155,7 +168,12 @@ public class MainUIController : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    
+    public void AlPulsarPescadorLiver()
+    {
+        SceneManager.LoadScene(2);
+
+    }
+
     public void AlPulsarExitGame()
     {
         Application.Quit();
@@ -164,6 +182,7 @@ public class MainUIController : MonoBehaviour
 
     private void Update()
     {
+
         if (cityState == "Kidney" && !inminigame)
         {
             //activar el glow del botón de pause 
@@ -195,7 +214,15 @@ public class MainUIController : MonoBehaviour
                 if(pressurePercentage < 50)
                 {
                     currAvatar.sprite = avatares[2];
+                    panelSAD.gameObject.GetComponent<UISpritesAnimation>().enabled = false;
                 }
+                if (pressurePercentage >= 80)
+                {
+                    panelSAD.gameObject.GetComponent<UISpritesAnimation>().enabled = false;
+                    currAvatar.sprite = avatares[1];
+
+                }
+
             }
             else if(pressurePercentage >= 100)
             {
@@ -223,6 +250,19 @@ public class MainUIController : MonoBehaviour
     public void KidneyEnter()
     {
         cityState = "Kidney";
+        gameObject.GetComponent<AudioSource>().clip = riñon;
+        gameObject.GetComponent<AudioSource>().Play();
+        gameObject.GetComponent<AudioSource>().volume = 0.6f;
+
+    }
+
+    public void LiverEnter()
+    {
+        farLiver.gameObject.SetActive(false);
+        cityState = "Liver";
+        gameObject.GetComponent<AudioSource>().clip = liveraudio;
+        gameObject.GetComponent<AudioSource>().Play();
+
     }
     public void PulsarMinero()
     {
@@ -235,6 +275,8 @@ public class MainUIController : MonoBehaviour
     }
     public void SalirCiudad()
     {
+        gameObject.GetComponent<AudioSource>().clip = mapa;
+        gameObject.GetComponent<AudioSource>().Play();
         kidney.gameObject.SetActive(false);
         GameObject.Find("Mapa").gameObject.GetComponent<Scroll>().incity = false;
         Camera.main.orthographicSize = 5;
@@ -268,6 +310,7 @@ public class MainUIController : MonoBehaviour
 
     public void ReninSent(float reninvalue)
     {
+        gameObject.GetComponent<AudioSource>().clip = mapa;
         reninSc.reninDiscovered = false;
         print(reninvalue);
         SalirCiudad();

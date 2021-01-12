@@ -308,15 +308,15 @@ RectTransform:
   m_GameObject: {fileID: 172338666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 265320581}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 97.9, y: -19.7}
-  m_SizeDelta: {x: 1700, y: 314}
+  m_AnchoredPosition: {x: 99.06, y: -19.7}
+  m_SizeDelta: {x: 187.775, y: 31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172338668
 MonoBehaviour:
@@ -340,7 +340,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -454,7 +454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &265320581
 RectTransform:
   m_ObjectHideFlags: 0
@@ -984,6 +984,7 @@ GameObject:
   - component: {fileID: 491988035}
   - component: {fileID: 491988034}
   - component: {fileID: 491988033}
+  - component: {fileID: 491988036}
   m_Layer: 5
   m_Name: BotonAyuda
   m_TagString: Untagged
@@ -1103,6 +1104,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491988031}
   m_CullTransparentMesh: 0
+--- !u!114 &491988036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491988031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63bb196448c9194448c077a44f2a5434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animvalocity: 1.4
+  sprites:
+  - {fileID: -855298285791758126, guid: e2fb18b625442a247aad14d008989f12, type: 3}
+  - {fileID: 6937817954938267909, guid: feeef2059153b7e4e91a4c3b4f6dc6da, type: 3}
+  - {fileID: -6470460504253458178, guid: ca43d3a129c44034bbe3479b53f2821f, type: 3}
+  - {fileID: -4178046375966092550, guid: cb827bd9b9231bf4faee7b2625af733a, type: 3}
+  - {fileID: 4130640169021434097, guid: 19a2136f00d5d724496ac927a85fc5ee, type: 3}
+  - {fileID: 3465286685962602723, guid: 601d8fbfa36f5f7459d1fc299c609515, type: 3}
+  - {fileID: 7028616704906629411, guid: 06eac883dcbd8aa47af4c1fc16f395e6, type: 3}
+  - {fileID: 8288426215254106694, guid: 6fe24797f6209664f8ddc62e8d97d68d, type: 3}
+  - {fileID: 4113829005332862926, guid: e779f78d33ae78b4f8d7f63993d76df6, type: 3}
+  - {fileID: -5099292496197868168, guid: 6966272f5b03d914bb45e82a892fc823, type: 3}
+  - {fileID: -2966200626249415253, guid: 22db9c1dcf2613f4aadf1ca9cb9a42a4, type: 3}
 --- !u!1 &507763440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,7 +1656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &558824509
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3511,13 +3537,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: {fileID: 0}
+  increasedecrease: {fileID: 0}
   resourceImage: {fileID: 0}
   resourcePercentage: 0
   reninSc: {fileID: 519420033}
   cityState: 
   increaseText: {fileID: 0}
+  increase: {fileID: 0}
+  decrease: {fileID: 0}
+  botonPause: {fileID: 0}
+  pause: {fileID: 0}
+  play: {fileID: 0}
   panelPauseDesplegable: {fileID: 1612613110}
-  panelSAD: {fileID: 265320580}
+  panelSAD: {fileID: 0}
   tA1: {fileID: 0}
   tA2: {fileID: 172338668}
   tA3: {fileID: 0}
@@ -3528,6 +3560,7 @@ MonoBehaviour:
   currAvatar: {fileID: 491988034}
   pressurePercentage: 0
   pressureImage: {fileID: 515290991}
+  farLiver: {fileID: 0}
   kidney: {fileID: 0}
   liver: {fileID: 0}
   ciudadesActivadas: 0
@@ -3538,6 +3571,9 @@ MonoBehaviour:
     width: 0
     height: 0
   pescador: {fileID: 0}
+  "ri\xF1on": {fileID: 0}
+  mapa: {fileID: 0}
+  liveraudio: {fileID: 0}
   playButton: {fileID: 0}
   exitButton: {fileID: 0}
   creditsText: {fileID: 0}

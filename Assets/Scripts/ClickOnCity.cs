@@ -153,7 +153,7 @@ public class ClickOnCity : MonoBehaviour
     {
         Camera.main.transform.position = liver.transform.position;
         Camera.main.gameObject.GetComponent<Tutorial>().IniTutoLiver();
-        UiCon.cityState = "Liver";
+        UiCon.LiverEnter();
         UiCon.liver.gameObject.SetActive(true);
     }
 
