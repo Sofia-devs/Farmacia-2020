@@ -34,7 +34,7 @@ public class Fishing : MonoBehaviour
     {
         if (active)
         {
-            if (uiCon.pressurePercentage < 100 && Timer <= 40)
+            if (uiCon.pressurePercentage < 100 && Timer <= 30)
             {
                 Timer += Time.deltaTime; //Un simple cronómetro
             }
@@ -109,11 +109,11 @@ public class Fishing : MonoBehaviour
     {
         if (pass)
         {
-
+            SceneManager.LoadScene(1);
         }
         else
         {
-            SceneManager.LoadScene("Fin");
+            SceneManager.LoadScene(2);
         }
     }
 

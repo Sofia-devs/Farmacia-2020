@@ -76,6 +76,7 @@ public class FollowthePath : MonoBehaviour
                     {
                         waypointIndex = 0;
                         transform.position = waypoints[waypointIndex].transform.position;
+                        gameObject.SetActive(false);
 
                     }
                 }

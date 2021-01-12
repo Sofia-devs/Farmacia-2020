@@ -12,7 +12,7 @@ public class Scroll : MonoBehaviour
     {
         if (!incity)
         {
-            offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+            offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(0, Input.mousePosition.y, screenPoint.z));
             Camera.main.orthographicSize = 5;
         }
 
@@ -22,7 +22,7 @@ public class Scroll : MonoBehaviour
     {
         if (!incity)
         {
-            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+            Vector3 curScreenPoint = new Vector3(0, Input.mousePosition.y, screenPoint.z);
             Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
             transform.position = curPosition;
         }
