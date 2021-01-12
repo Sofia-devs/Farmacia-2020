@@ -507,7 +507,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &162852754
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1718,17 +1718,17 @@ MonoBehaviour:
   dialogPhraseTutorial:
   - Hi! Welcome to Kidney Valley, you must be the new river supervisor. Click on
     me when you need more info!
-  - So that you can review each city, click on them
-  - Here we get rid of impurities in the rivers and produce renin when necessary
-  - Remember to take breaks during work
-  - Hey, look! It seems that the pressure of the river is dropping too low
-  - The river is the sustenance of this world, something must be done
+  - So that you can review each city, click on them.
+  - Here we get rid of impurities in the rivers and produce renin when necessary.
+  - Remember to take breaks during work.
+  - Hey, look! It seems that the pressure of the river is dropping too low.
+  - The river is the sustenance of this world, something must be done.
   - "Let\u2019s extract the renin from the mines, the adrenal glands generate it
     from the top constantly. Talk with the miners!"
-  - Now you just have to wait until you have enough. And be careful not to go overboard!
-  - You can increase or decrease production
+  - 'Now you just have to wait until you have enough. '
+  - You can increase or decrease production. And be careful not to go overboard!
   - "We\u2019re going to send the Renin on the boat to Liver Gorge. They will follow
-    with the rest"
+    with the rest."
   - On going!
   dialogPhraseTutorialLiver:
   - Stop there! This is the Liver Gorge

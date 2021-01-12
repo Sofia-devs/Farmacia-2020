@@ -488,15 +488,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 4492170799314170919, guid: 8587cb0b03d100c46a3092329b1584b3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1475,10 +1475,8 @@ MonoBehaviour:
   dialogPhraseTutorial:
   - "Angiotensinogen will pass through this current flow, click on \u201CFISH!\u201D
     when it is on the fishing net."
-  - "Avoid fishing for other things or we won\u2019t get Angiotensin I, catch it!"
-  - 
-  - 
-  - 
+  - "Avoid fishing for other things or we won\u2019t get Angiotensin I, click on
+    me when you are ready!"
   dialogText: {fileID: 172338668}
   pescador: {fileID: 825509541}
   avatarState: 
