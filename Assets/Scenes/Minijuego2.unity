@@ -351,7 +351,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Help
+  m_Text: '
 
 '
 --- !u!222 &172338669
@@ -454,7 +454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &265320581
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1499,10 +1499,8 @@ MonoBehaviour:
   panelAvatar: {fileID: 558824508}
   faseTutorial: 0
   dialogPhraseTutorial:
-  - "Angiotensinogen will pass through this current flow, click on \u201CFISH!\u201D
-    when it is on the fishing net."
-  - "Avoid fishing for other things or we won\u2019t get Angiotensin I, click on
-    me when you are ready!"
+  - "Angiotensinogen is blue, click on FISH! when it\xB4s on the net."
+  - Avoid the yellow fishes and click on me when you are ready!
   dialogText: {fileID: 172338668}
   pescador: {fileID: 825509541}
   avatarState: 
