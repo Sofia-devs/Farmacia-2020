@@ -460,6 +460,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: faad05b1d579a484cabbfff2afe4fd97, type: 3}
   - {fileID: 21300000, guid: f549eaababcb04d4a99f67991ae7ee15, type: 3}
   - {fileID: 21300000, guid: 16ab517067e19d548bbc3e672fdc768a, type: 3}
+  spritesHappy: []
+  spritesSad: []
+  spritesStressed: []
+  sceneChecker: 0
+  avatarEstado: 
 --- !u!1 &159769357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,6 +1381,46 @@ MonoBehaviour:
   - {fileID: 4113829005332862926, guid: e779f78d33ae78b4f8d7f63993d76df6, type: 3}
   - {fileID: -5099292496197868168, guid: 6966272f5b03d914bb45e82a892fc823, type: 3}
   - {fileID: -2966200626249415253, guid: 22db9c1dcf2613f4aadf1ca9cb9a42a4, type: 3}
+  spritesHappy:
+  - {fileID: -855298285791758126, guid: e2fb18b625442a247aad14d008989f12, type: 3}
+  - {fileID: 6937817954938267909, guid: feeef2059153b7e4e91a4c3b4f6dc6da, type: 3}
+  - {fileID: -6470460504253458178, guid: ca43d3a129c44034bbe3479b53f2821f, type: 3}
+  - {fileID: -4178046375966092550, guid: cb827bd9b9231bf4faee7b2625af733a, type: 3}
+  - {fileID: 4130640169021434097, guid: 19a2136f00d5d724496ac927a85fc5ee, type: 3}
+  - {fileID: 3465286685962602723, guid: 601d8fbfa36f5f7459d1fc299c609515, type: 3}
+  - {fileID: 7028616704906629411, guid: 06eac883dcbd8aa47af4c1fc16f395e6, type: 3}
+  - {fileID: 8288426215254106694, guid: 6fe24797f6209664f8ddc62e8d97d68d, type: 3}
+  - {fileID: 4113829005332862926, guid: e779f78d33ae78b4f8d7f63993d76df6, type: 3}
+  - {fileID: -5099292496197868168, guid: 6966272f5b03d914bb45e82a892fc823, type: 3}
+  - {fileID: -2966200626249415253, guid: 22db9c1dcf2613f4aadf1ca9cb9a42a4, type: 3}
+  spritesSad:
+  - {fileID: -7796592216445535760, guid: 122fb918a4c8d34468ac8e86de6dcfe1, type: 3}
+  - {fileID: 5216251804709672431, guid: e12654d6d63b0ad44b026c6229dc8731, type: 3}
+  - {fileID: -3004382168379554998, guid: 000c8cc90f83eaa4f971ea98aad69c54, type: 3}
+  - {fileID: -4633558640559979076, guid: de856a23f2745f244a2df7e17b39ca7a, type: 3}
+  - {fileID: 761615904915994515, guid: 1b4cffc5299a5164da7b3a4defda4f7f, type: 3}
+  - {fileID: 3316773671944628327, guid: e5cec442d3be5404ab6b81282e25b24e, type: 3}
+  - {fileID: 73503790624656322, guid: 1b0771a73a7b2e74596b38ce1bfe6646, type: 3}
+  - {fileID: 6658844443948341008, guid: c1c5fef7f49565246bfd3b22e55db5a6, type: 3}
+  - {fileID: -4351189612218619411, guid: 446747bfe5273ca4391af067f08d1b8d, type: 3}
+  - {fileID: 2801182034464717127, guid: 4c2beb65cc12b38479f733b57b3938ff, type: 3}
+  - {fileID: -5210452310609668054, guid: 11995b8f33cb94946aeff0a1dc4aa5c7, type: 3}
+  - {fileID: 6817400487596478210, guid: 51fd07c8e7e03bc409a44cfaf2a218cb, type: 3}
+  spritesStressed:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  sceneChecker: 1
+  avatarEstado: Happy
 --- !u!1 &510146404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,7 +1770,7 @@ MonoBehaviour:
   - The river is the sustenance of this world, something must be done.
   - "Let\u2019s extract the renin from the mines, the adrenal glands generate it
     from the top constantly. Talk with the miners!"
-  - 'Now you just have to wait until you have enough. '
+  - Now you just have to wait until you have enough. Look at the Renin symbol!
   - You can increase or decrease production. And be careful not to go overboard!
   - "We\u2019re going to send the Renin on the boat to Liver Gorge. They will follow
     with the rest."

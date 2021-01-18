@@ -213,13 +213,13 @@ public class MainUIController : MonoBehaviour
                 }
                 if(pressurePercentage < 50)
                 {
-                    currAvatar.sprite = avatares[2];
-                    panelSAD.gameObject.GetComponent<UISpritesAnimation>().enabled = false;
+                   
+                    panelSAD.gameObject.GetComponent<UISpritesAnimation>().avatarEstado = "Sad";
                 }
                 if (pressurePercentage >= 80)
                 {
-                    panelSAD.gameObject.GetComponent<UISpritesAnimation>().enabled = false;
-                    currAvatar.sprite = avatares[1];
+                    panelSAD.gameObject.GetComponent<UISpritesAnimation>().avatarEstado = "Stressed";
+                    
 
                 }
 
