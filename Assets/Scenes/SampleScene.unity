@@ -1407,18 +1407,18 @@ MonoBehaviour:
   - {fileID: -5210452310609668054, guid: 11995b8f33cb94946aeff0a1dc4aa5c7, type: 3}
   - {fileID: 6817400487596478210, guid: 51fd07c8e7e03bc409a44cfaf2a218cb, type: 3}
   spritesStressed:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -7585709536337843017, guid: 75a33a2cfb0f4214ca032342af5dccf8, type: 3}
+  - {fileID: -4715922165524316659, guid: 31fa181a8b77b6a468781b52dd9c484f, type: 3}
+  - {fileID: -4204799366626682035, guid: c65a09d5ab4ef014fbd8a02c102756da, type: 3}
+  - {fileID: -2880058397969490342, guid: 491906fef26898b4fbcb065a8ca37080, type: 3}
+  - {fileID: -2512789188896233569, guid: 00da62fd7bfb4b446af1bcc71f56ec30, type: 3}
+  - {fileID: 415176162843354006, guid: 41be3654f24685f4ea023048f3acc3ed, type: 3}
+  - {fileID: 7697600541074129907, guid: 50a906b5bd5802546816671535089fcf, type: 3}
+  - {fileID: 6090139155750782119, guid: c6b9d816a88e2594a9b995ece32e93d8, type: 3}
+  - {fileID: -7046690590232332728, guid: 9bbfc2e20f3b9804fa2972f31c2e7271, type: 3}
+  - {fileID: 1657951246364771890, guid: 7ecc7a0dc81a5ba44b8b4b2042796694, type: 3}
+  - {fileID: 1899822189776125387, guid: 7091e5bc84a455c498468dc9ed6f2263, type: 3}
+  - {fileID: 2936052752345873207, guid: 75f836fee61a07e40acd15403403cb1e, type: 3}
   sceneChecker: 1
   avatarEstado: Happy
 --- !u!1 &510146404

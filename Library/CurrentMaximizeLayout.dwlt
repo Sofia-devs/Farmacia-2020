@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 677, y: 471}
   m_MaxSize: {x: 14000, y: 14021}
   vertical: 0
-  controlID: 5040
+  controlID: 2978
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 471}
   m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 5041
+  controlID: 2979
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 5042
+  controlID: 2948
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,7 +220,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3ed4ffff92f9ffff3afbffff784700003c480000
+      m_ExpandedIDs: 5cf9ffffdaf9ffff3afbffffac490000704a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -515,20 +515,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Sprites
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Sprites
   m_LastFoldersGridSize: 71
   m_LastProjectPath: "F:\\Universidad Sergio\\3\xBA Carrera\\Farmacia Unity\\Farmacia-2020"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 16460000
-    m_LastClickedID: 17942
+    m_SelectedIDs: 18460000
+    m_LastClickedID: 17944
     m_ExpandedIDs: 000000001446000016460000184600001a4600001c4600001e46000020460000224600002446000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -582,10 +582,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: d0460000
-    m_LastClickedInstanceID: 18128
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000dc6e00003446000034580000385800003c58000040580000445800004c5800005058000054580000585800005c5800006058000064580000685800006c58000070580000745800007c480000404500003e4500001c4c000030470000d65a000054440000f04600000266000008660000664600006446000068460000c8640000cc640000d4640000dc640000d0640000d8640000d047000000000000924800008a4800008e48000086480000824800006e6f00007e48000056820000444b0000185b0000fe470000024800001c5b00008c4500008e45000090450000924500009445000096450000984500009a4500009c4500009e450000a0450000ec490000e0490000f4490000d4490000dc490000d0490000e4490000e8490000fc490000d8490000f8490000f0490000
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000dc6e00003446000034580000385800003c58000040580000445800004c5800005058000054580000585800005c5800006058000064580000685800006c58000070580000745800007c480000404500003e4500001c4c000030470000d65a000054440000f04600000266000008660000664600006446000068460000c8640000cc640000d4640000dc640000d0640000d8640000d047000000000000924800008a4800008e48000086480000824800006e6f00007e48000056820000444b0000185b0000fe470000024800001c5b00008c4500008e45000090450000924500009445000096450000984500009a4500009c4500009e450000a0450000ec490000e0490000f4490000d4490000dc490000d0490000e4490000e8490000fc490000d8490000f8490000f0490000b64b0000b24b0000aa4b0000c64b0000c24b0000a24b0000a64b0000ae4b00009e4b0000be4b0000ba4b0000ca4b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -724,7 +724,7 @@ MonoBehaviour:
     m_CachedPref: 151
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 18128
+  m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
   m_AssetGUID: 
   m_InstanceID: 0
