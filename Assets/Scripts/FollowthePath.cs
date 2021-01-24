@@ -109,8 +109,6 @@ public class FollowthePath : MonoBehaviour
             }
             else
             {
-
-                print("cesta");
                 if (moveSpeed != 8)
                 {
                     moveSpeed = 8;

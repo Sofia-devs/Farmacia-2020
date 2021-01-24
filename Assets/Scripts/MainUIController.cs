@@ -174,6 +174,11 @@ public class MainUIController : MonoBehaviour
 
     }
 
+    public void AlPulsarMenuPause()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void AlPulsarExitGame()
     {
         Application.Quit();
